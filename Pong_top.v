@@ -27,7 +27,7 @@ reg			[11:0]		pixel_color;	//12 Bits representing color of pixel, 4 bits for R, 
 	wire [9:0] P1_paddle_width = 10;
 	wire [9:0] P1_paddle_height = 120;
 	wire [9:0] P1_paddle_x_location = 20;
-	wire [9:0] P1_paddle_y_location = 20;
+	wire [9:0] P1_paddle_y_location = 180;
 	reg P1_paddle;
 
 make_box draw_P1_paddle(
@@ -45,7 +45,7 @@ make_box draw_P1_paddle(
 	wire [9:0] P2_paddle_width = 10;
 	wire [9:0] P2_paddle_height = 120;
 	wire [9:0] P2_paddle_x_location = 610;
-	wire [9:0] P2_paddle_y_location = 20;
+	wire [9:0] P2_paddle_y_location = 180;
 	reg P2_paddle;
 
 make_box draw_P2_paddle(
@@ -81,7 +81,7 @@ make_box draw_top_border (
 	wire [9:0] bottom_border_width = 640;
 	wire [9:0] bottom_border_height = 2;
 	wire [9:0] bottom_border_x_location = 0;
-	wire [9:0] bottom_border_y_location = 477;
+	wire [9:0] bottom_border_y_location = 478;
 	reg bottom_border;
 	
 make_box draw_bottom_border (
@@ -130,10 +130,28 @@ make_box draw_left_border (
 	.pixel_clk(pixel_clk),
 	.box(left_border)
 );
+
+//Draw the ball
+	wire [9:0] ball_width = 5;
+	wire [9:0] ball_height = 5;
+	wire [9:0] ball_x_location = 320;
+	wire [9:0] ball_y_location = 240;
+	reg ball;
+	
+make_box draw_ball (
+	.X_pix(X_pix),
+	.Y_pix(Y_pix),
+	.box_width(ball_width),
+	.box_height(ball_height),
+	.box_x_location(ball_x_location),
+	.box_y_location(ball_y_location),
+	.pixel_clk(pixel_clk),
+	.box(ball)
+);
 							
 always @(posedge pixel_clk)
 	begin
-		if (P1_paddle || P2_paddle || top_border || bottom_border || right_border || left_border) pixel_color <= 12'b1111_1111_1111;
+		if (P1_paddle || P2_paddle || top_border || bottom_border || right_border || left_border || ball) pixel_color <= 12'b1111_1111_1111;
 		else pixel_color <= 12'b0000_0000_0000;
 	end
 	
