@@ -1,5 +1,5 @@
 Fitter report for Pong_top
-Wed Dec 01 16:14:38 2021
+Sat Dec 04 22:59:45 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -68,17 +68,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Wed Dec 01 16:14:38 2021           ;
+; Fitter Status                      ; Successful - Sat Dec 04 22:59:45 2021           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Pong_top                                        ;
 ; Top-level Entity Name              ; Pong_top                                        ;
 ; Family                             ; Cyclone III                                     ;
 ; Device                             ; EP3C16F484C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 135 / 15,408 ( < 1 % )                          ;
-;     Total combinational functions  ; 124 / 15,408 ( < 1 % )                          ;
-;     Dedicated logic registers      ; 46 / 15,408 ( < 1 % )                           ;
-; Total registers                    ; 46                                              ;
+; Total logic elements               ; 229 / 15,408 ( 1 % )                            ;
+;     Total combinational functions  ; 218 / 15,408 ( 1 % )                            ;
+;     Dedicated logic registers      ; 67 / 15,408 ( < 1 % )                           ;
+; Total registers                    ; 67                                              ;
 ; Total pins                         ; 15 / 347 ( 4 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 516,096 ( 0 % )                             ;
@@ -187,8 +187,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 211 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 211 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 325 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 325 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -211,7 +211,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 201     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 315     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 10      ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -222,126 +222,126 @@ Parallel compilation was disabled, but you have multiple processors available. E
 The pin-out file can be found in C:/ECE275_Labs/Pong/output_files/Pong_top.pin.
 
 
-+----------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                        ;
-+---------------------------------------------+------------------------+
-; Resource                                    ; Usage                  ;
-+---------------------------------------------+------------------------+
-; Total logic elements                        ; 135 / 15,408 ( < 1 % ) ;
-;     -- Combinational with no register       ; 89                     ;
-;     -- Register only                        ; 11                     ;
-;     -- Combinational with a register        ; 35                     ;
-;                                             ;                        ;
-; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 62                     ;
-;     -- 3 input functions                    ; 22                     ;
-;     -- <=2 input functions                  ; 40                     ;
-;     -- Register only                        ; 11                     ;
-;                                             ;                        ;
-; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 93                     ;
-;     -- arithmetic mode                      ; 31                     ;
-;                                             ;                        ;
-; Total registers*                            ; 46 / 17,068 ( < 1 % )  ;
-;     -- Dedicated logic registers            ; 46 / 15,408 ( < 1 % )  ;
-;     -- I/O registers                        ; 0 / 1,660 ( 0 % )      ;
-;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 10 / 963 ( 1 % )       ;
-; Virtual pins                                ; 0                      ;
-; I/O pins                                    ; 15 / 347 ( 4 % )       ;
-;     -- Clock pins                           ; 1 / 8 ( 13 % )         ;
-;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )          ;
-;                                             ;                        ;
-; Global signals                              ; 1                      ;
-; M9Ks                                        ; 0 / 56 ( 0 % )         ;
-; Total block memory bits                     ; 0 / 516,096 ( 0 % )    ;
-; Total block memory implementation bits      ; 0 / 516,096 ( 0 % )    ;
-; Embedded Multiplier 9-bit elements          ; 0 / 112 ( 0 % )        ;
-; PLLs                                        ; 1 / 4 ( 25 % )         ;
-; Global clocks                               ; 1 / 20 ( 5 % )         ;
-; JTAGs                                       ; 0 / 1 ( 0 % )          ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
-; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
-; Impedance control blocks                    ; 0 / 4 ( 0 % )          ;
-; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%           ;
-; Peak interconnect usage (total/H/V)         ; 0% / 0% / 1%           ;
-; Maximum fan-out                             ; 46                     ;
-; Highest non-global fan-out                  ; 13                     ;
-; Total fan-out                               ; 529                    ;
-; Average fan-out                             ; 2.52                   ;
-+---------------------------------------------+------------------------+
++---------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                       ;
++---------------------------------------------+-----------------------+
+; Resource                                    ; Usage                 ;
++---------------------------------------------+-----------------------+
+; Total logic elements                        ; 229 / 15,408 ( 1 % )  ;
+;     -- Combinational with no register       ; 162                   ;
+;     -- Register only                        ; 11                    ;
+;     -- Combinational with a register        ; 56                    ;
+;                                             ;                       ;
+; Logic element usage by number of LUT inputs ;                       ;
+;     -- 4 input functions                    ; 82                    ;
+;     -- 3 input functions                    ; 72                    ;
+;     -- <=2 input functions                  ; 64                    ;
+;     -- Register only                        ; 11                    ;
+;                                             ;                       ;
+; Logic elements by mode                      ;                       ;
+;     -- normal mode                          ; 117                   ;
+;     -- arithmetic mode                      ; 101                   ;
+;                                             ;                       ;
+; Total registers*                            ; 67 / 17,068 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 67 / 15,408 ( < 1 % ) ;
+;     -- I/O registers                        ; 0 / 1,660 ( 0 % )     ;
+;                                             ;                       ;
+; Total LABs:  partially or completely used   ; 17 / 963 ( 2 % )      ;
+; Virtual pins                                ; 0                     ;
+; I/O pins                                    ; 15 / 347 ( 4 % )      ;
+;     -- Clock pins                           ; 1 / 8 ( 13 % )        ;
+;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )         ;
+;                                             ;                       ;
+; Global signals                              ; 1                     ;
+; M9Ks                                        ; 0 / 56 ( 0 % )        ;
+; Total block memory bits                     ; 0 / 516,096 ( 0 % )   ;
+; Total block memory implementation bits      ; 0 / 516,096 ( 0 % )   ;
+; Embedded Multiplier 9-bit elements          ; 0 / 112 ( 0 % )       ;
+; PLLs                                        ; 1 / 4 ( 25 % )        ;
+; Global clocks                               ; 1 / 20 ( 5 % )        ;
+; JTAGs                                       ; 0 / 1 ( 0 % )         ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )         ;
+; ASMI blocks                                 ; 0 / 1 ( 0 % )         ;
+; Impedance control blocks                    ; 0 / 4 ( 0 % )         ;
+; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%          ;
+; Peak interconnect usage (total/H/V)         ; 0% / 0% / 1%          ;
+; Maximum fan-out                             ; 67                    ;
+; Highest non-global fan-out                  ; 22                    ;
+; Total fan-out                               ; 888                   ;
+; Average fan-out                             ; 2.64                  ;
++---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
 
-+------------------------------------------------------------------------------------------------------+
-; Fitter Partition Statistics                                                                          ;
-+---------------------------------------------+-----------------------+--------------------------------+
-; Statistic                                   ; Top                   ; hard_block:auto_generated_inst ;
-+---------------------------------------------+-----------------------+--------------------------------+
-; Difficulty Clustering Region                ; Low                   ; Low                            ;
-;                                             ;                       ;                                ;
-; Total logic elements                        ; 135 / 15408 ( < 1 % ) ; 0 / 15408 ( 0 % )              ;
-;     -- Combinational with no register       ; 89                    ; 0                              ;
-;     -- Register only                        ; 11                    ; 0                              ;
-;     -- Combinational with a register        ; 35                    ; 0                              ;
-;                                             ;                       ;                                ;
-; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 62                    ; 0                              ;
-;     -- 3 input functions                    ; 22                    ; 0                              ;
-;     -- <=2 input functions                  ; 40                    ; 0                              ;
-;     -- Register only                        ; 11                    ; 0                              ;
-;                                             ;                       ;                                ;
-; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 93                    ; 0                              ;
-;     -- arithmetic mode                      ; 31                    ; 0                              ;
-;                                             ;                       ;                                ;
-; Total registers                             ; 46                    ; 0                              ;
-;     -- Dedicated logic registers            ; 46 / 15408 ( < 1 % )  ; 0 / 15408 ( 0 % )              ;
-;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 10 / 963 ( 1 % )      ; 0 / 963 ( 0 % )                ;
-;                                             ;                       ;                                ;
-; Virtual pins                                ; 0                     ; 0                              ;
-; I/O pins                                    ; 15                    ; 0                              ;
-; Embedded Multiplier 9-bit elements          ; 0 / 112 ( 0 % )       ; 0 / 112 ( 0 % )                ;
-; Total memory bits                           ; 0                     ; 0                              ;
-; Total RAM block bits                        ; 0                     ; 0                              ;
-; PLL                                         ; 0 / 4 ( 0 % )         ; 1 / 4 ( 25 % )                 ;
-; Clock control block                         ; 0 / 24 ( 0 % )        ; 1 / 24 ( 4 % )                 ;
-;                                             ;                       ;                                ;
-; Connections                                 ;                       ;                                ;
-;     -- Input Connections                    ; 46                    ; 1                              ;
-;     -- Registered Input Connections         ; 46                    ; 0                              ;
-;     -- Output Connections                   ; 1                     ; 46                             ;
-;     -- Registered Output Connections        ; 0                     ; 0                              ;
-;                                             ;                       ;                                ;
-; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 523                   ; 53                             ;
-;     -- Registered Connections               ; 214                   ; 0                              ;
-;                                             ;                       ;                                ;
-; External Connections                        ;                       ;                                ;
-;     -- Top                                  ; 0                     ; 47                             ;
-;     -- hard_block:auto_generated_inst       ; 47                    ; 0                              ;
-;                                             ;                       ;                                ;
-; Partition Interface                         ;                       ;                                ;
-;     -- Input Ports                          ; 1                     ; 1                              ;
-;     -- Output Ports                         ; 14                    ; 1                              ;
-;     -- Bidir Ports                          ; 0                     ; 0                              ;
-;                                             ;                       ;                                ;
-; Registered Ports                            ;                       ;                                ;
-;     -- Registered Input Ports               ; 0                     ; 0                              ;
-;     -- Registered Output Ports              ; 0                     ; 0                              ;
-;                                             ;                       ;                                ;
-; Port Connectivity                           ;                       ;                                ;
-;     -- Input Ports driven by GND            ; 0                     ; 0                              ;
-;     -- Output Ports driven by GND           ; 0                     ; 0                              ;
-;     -- Input Ports driven by VCC            ; 0                     ; 0                              ;
-;     -- Output Ports driven by VCC           ; 0                     ; 0                              ;
-;     -- Input Ports with no Source           ; 0                     ; 0                              ;
-;     -- Output Ports with no Source          ; 0                     ; 0                              ;
-;     -- Input Ports with no Fanout           ; 0                     ; 0                              ;
-;     -- Output Ports with no Fanout          ; 0                     ; 0                              ;
-+---------------------------------------------+-----------------------+--------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; Fitter Partition Statistics                                                                         ;
++---------------------------------------------+----------------------+--------------------------------+
+; Statistic                                   ; Top                  ; hard_block:auto_generated_inst ;
++---------------------------------------------+----------------------+--------------------------------+
+; Difficulty Clustering Region                ; Low                  ; Low                            ;
+;                                             ;                      ;                                ;
+; Total logic elements                        ; 229 / 15408 ( 1 % )  ; 0 / 15408 ( 0 % )              ;
+;     -- Combinational with no register       ; 162                  ; 0                              ;
+;     -- Register only                        ; 11                   ; 0                              ;
+;     -- Combinational with a register        ; 56                   ; 0                              ;
+;                                             ;                      ;                                ;
+; Logic element usage by number of LUT inputs ;                      ;                                ;
+;     -- 4 input functions                    ; 82                   ; 0                              ;
+;     -- 3 input functions                    ; 72                   ; 0                              ;
+;     -- <=2 input functions                  ; 64                   ; 0                              ;
+;     -- Register only                        ; 11                   ; 0                              ;
+;                                             ;                      ;                                ;
+; Logic elements by mode                      ;                      ;                                ;
+;     -- normal mode                          ; 117                  ; 0                              ;
+;     -- arithmetic mode                      ; 101                  ; 0                              ;
+;                                             ;                      ;                                ;
+; Total registers                             ; 67                   ; 0                              ;
+;     -- Dedicated logic registers            ; 67 / 15408 ( < 1 % ) ; 0 / 15408 ( 0 % )              ;
+;                                             ;                      ;                                ;
+; Total LABs:  partially or completely used   ; 17 / 963 ( 2 % )     ; 0 / 963 ( 0 % )                ;
+;                                             ;                      ;                                ;
+; Virtual pins                                ; 0                    ; 0                              ;
+; I/O pins                                    ; 15                   ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0 / 112 ( 0 % )      ; 0 / 112 ( 0 % )                ;
+; Total memory bits                           ; 0                    ; 0                              ;
+; Total RAM block bits                        ; 0                    ; 0                              ;
+; PLL                                         ; 0 / 4 ( 0 % )        ; 1 / 4 ( 25 % )                 ;
+; Clock control block                         ; 0 / 24 ( 0 % )       ; 1 / 24 ( 4 % )                 ;
+;                                             ;                      ;                                ;
+; Connections                                 ;                      ;                                ;
+;     -- Input Connections                    ; 67                   ; 1                              ;
+;     -- Registered Input Connections         ; 67                   ; 0                              ;
+;     -- Output Connections                   ; 1                    ; 67                             ;
+;     -- Registered Output Connections        ; 0                    ; 0                              ;
+;                                             ;                      ;                                ;
+; Internal Connections                        ;                      ;                                ;
+;     -- Total Connections                    ; 882                  ; 74                             ;
+;     -- Registered Connections               ; 367                  ; 0                              ;
+;                                             ;                      ;                                ;
+; External Connections                        ;                      ;                                ;
+;     -- Top                                  ; 0                    ; 68                             ;
+;     -- hard_block:auto_generated_inst       ; 68                   ; 0                              ;
+;                                             ;                      ;                                ;
+; Partition Interface                         ;                      ;                                ;
+;     -- Input Ports                          ; 1                    ; 1                              ;
+;     -- Output Ports                         ; 14                   ; 1                              ;
+;     -- Bidir Ports                          ; 0                    ; 0                              ;
+;                                             ;                      ;                                ;
+; Registered Ports                            ;                      ;                                ;
+;     -- Registered Input Ports               ; 0                    ; 0                              ;
+;     -- Registered Output Ports              ; 0                    ; 0                              ;
+;                                             ;                      ;                                ;
+; Port Connectivity                           ;                      ;                                ;
+;     -- Input Ports driven by GND            ; 0                    ; 0                              ;
+;     -- Output Ports driven by GND           ; 0                    ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0                    ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0                    ; 0                              ;
+;     -- Input Ports with no Source           ; 0                    ; 0                              ;
+;     -- Output Ports with no Source          ; 0                    ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0                    ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0                    ; 0                              ;
++---------------------------------------------+----------------------+--------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -963,18 +963,19 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +---------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                        ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                              ; Library Name ;
 +---------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------------------------------+--------------+
-; |Pong_top                                         ; 135 (2)     ; 46 (1)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 15   ; 0            ; 89 (1)       ; 11 (0)            ; 35 (1)           ; |Pong_top                                                                                                        ; work         ;
-;    |DE0_VGA:VGA_Driver|                           ; 91 (91)     ; 38 (38)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 53 (53)      ; 11 (11)           ; 27 (27)          ; |Pong_top|DE0_VGA:VGA_Driver                                                                                     ; work         ;
+; |Pong_top                                         ; 229 (3)     ; 67 (1)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 15   ; 0            ; 162 (2)      ; 11 (0)            ; 56 (1)           ; |Pong_top                                                                                                        ; work         ;
+;    |DE0_VGA:VGA_Driver|                           ; 92 (92)     ; 38 (38)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 54 (54)      ; 11 (11)           ; 27 (27)          ; |Pong_top|DE0_VGA:VGA_Driver                                                                                     ; work         ;
 ;       |PLL_PIXEL_CLK:pll_inst0|                   ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |Pong_top|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0                                                             ; work         ;
 ;          |altpll:altpll_component|                ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |Pong_top|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component                                     ; work         ;
 ;             |PLL_PIXEL_CLK_altpll:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |Pong_top|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component|PLL_PIXEL_CLK_altpll:auto_generated ; work         ;
-;    |make_box:draw_P1_paddle|                      ; 10 (10)     ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 1 (1)            ; |Pong_top|make_box:draw_P1_paddle                                                                                ; work         ;
+;    |make_box:draw_P1_paddle|                      ; 9 (9)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 1 (1)            ; |Pong_top|make_box:draw_P1_paddle                                                                                ; work         ;
 ;    |make_box:draw_P2_paddle|                      ; 3 (3)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 1 (1)            ; |Pong_top|make_box:draw_P2_paddle                                                                                ; work         ;
-;    |make_box:draw_ball|                           ; 9 (9)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 1 (1)            ; |Pong_top|make_box:draw_ball                                                                                     ; work         ;
-;    |make_box:draw_bottom_border|                  ; 6 (6)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 1 (1)            ; |Pong_top|make_box:draw_bottom_border                                                                            ; work         ;
-;    |make_box:draw_left_border|                    ; 2 (2)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; |Pong_top|make_box:draw_left_border                                                                              ; work         ;
-;    |make_box:draw_right_border|                   ; 3 (3)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 1 (1)            ; |Pong_top|make_box:draw_right_border                                                                             ; work         ;
-;    |make_box:draw_top_border|                     ; 9 (9)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 1 (1)            ; |Pong_top|make_box:draw_top_border                                                                               ; work         ;
+;    |make_box:draw_ball|                           ; 59 (59)     ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 58 (58)      ; 0 (0)             ; 1 (1)            ; |Pong_top|make_box:draw_ball                                                                                     ; work         ;
+;    |make_box:draw_bottom_border|                  ; 7 (7)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 1 (1)            ; |Pong_top|make_box:draw_bottom_border                                                                            ; work         ;
+;    |make_box:draw_left_border|                    ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |Pong_top|make_box:draw_left_border                                                                              ; work         ;
+;    |make_box:draw_right_border|                   ; 4 (4)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 1 (1)            ; |Pong_top|make_box:draw_right_border                                                                             ; work         ;
+;    |make_box:draw_top_border|                     ; 7 (7)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 1 (1)            ; |Pong_top|make_box:draw_top_border                                                                               ; work         ;
+;    |move_ball:b1|                                 ; 44 (44)     ; 21 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 21 (21)          ; |Pong_top|move_ball:b1                                                                                           ; work         ;
 +---------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1017,8 +1018,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                                                                    ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------------------------------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; CLK_50                                                                                                                  ; PIN_G21            ; 1       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; DE0_VGA:VGA_Driver|Equal4~2                                                                                             ; LCCOMB_X31_Y23_N30 ; 13      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component|PLL_PIXEL_CLK_altpll:auto_generated|wire_pll1_clk[0] ; PLL_2              ; 46      ; Clock        ; yes    ; Global Clock         ; GCLK8            ; --                        ;
+; DE0_VGA:VGA_Driver|Equal4~2                                                                                             ; LCCOMB_X29_Y20_N18 ; 22      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component|PLL_PIXEL_CLK_altpll:auto_generated|wire_pll1_clk[0] ; PLL_2              ; 67      ; Clock        ; yes    ; Global Clock         ; GCLK8            ; --                        ;
+; move_ball:b1|x_ball[5]~36                                                                                               ; LCCOMB_X32_Y19_N6  ; 21      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
 +-------------------------------------------------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1027,7 +1029,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name                                                                                                                    ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------------------------------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component|PLL_PIXEL_CLK_altpll:auto_generated|wire_pll1_clk[0] ; PLL_2    ; 46      ; 0                                    ; Global Clock         ; GCLK8            ; --                        ;
+; DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component|PLL_PIXEL_CLK_altpll:auto_generated|wire_pll1_clk[0] ; PLL_2    ; 67      ; 0                                    ; Global Clock         ; GCLK8            ; --                        ;
 +-------------------------------------------------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1036,43 +1038,66 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------------------------------+---------+
 ; Name                                                                                                                   ; Fan-Out ;
 +------------------------------------------------------------------------------------------------------------------------+---------+
-; DE0_VGA:VGA_Driver|Equal4~2                                                                                            ; 13      ;
-; DE0_VGA:VGA_Driver|WideNor0~2                                                                                          ; 13      ;
-; DE0_VGA:VGA_Driver|WideNor0~3                                                                                          ; 12      ;
+; DE0_VGA:VGA_Driver|Equal4~2                                                                                            ; 22      ;
+; move_ball:b1|x_ball[5]~36                                                                                              ; 21      ;
+; DE0_VGA:VGA_Driver|Equal3~1                                                                                            ; 14      ;
+; DE0_VGA:VGA_Driver|HS_counter[5]                                                                                       ; 14      ;
+; ~GND                                                                                                                   ; 13      ;
+; move_ball:b1|x_ball[0]                                                                                                 ; 13      ;
+; DE0_VGA:VGA_Driver|HS_counter[6]                                                                                       ; 12      ;
 ; DE0_VGA:VGA_Driver|VGA_BUS_R~0                                                                                         ; 12      ;
-; DE0_VGA:VGA_Driver|HS_counter[5]                                                                                       ; 11      ;
-; DE0_VGA:VGA_Driver|HS_counter[6]                                                                                       ; 11      ;
+; move_ball:b1|x_direction~0                                                                                             ; 10      ;
 ; DE0_VGA:VGA_Driver|VS_counter[5]                                                                                       ; 10      ;
 ; DE0_VGA:VGA_Driver|VS_counter[9]                                                                                       ; 10      ;
-; DE0_VGA:VGA_Driver|HS_counter[7]                                                                                       ; 9       ;
+; DE0_VGA:VGA_Driver|WideNor0~0                                                                                          ; 10      ;
+; move_ball:b1|y_direction~2                                                                                             ; 9       ;
 ; DE0_VGA:VGA_Driver|HS_counter[0]                                                                                       ; 9       ;
-; DE0_VGA:VGA_Driver|HS_counter[1]                                                                                       ; 8       ;
-; DE0_VGA:VGA_Driver|HS_counter[2]                                                                                       ; 8       ;
-; DE0_VGA:VGA_Driver|HS_counter[8]                                                                                       ; 8       ;
+; DE0_VGA:VGA_Driver|HS_counter[1]                                                                                       ; 9       ;
+; DE0_VGA:VGA_Driver|HS_counter[2]                                                                                       ; 9       ;
+; DE0_VGA:VGA_Driver|HS_counter[3]                                                                                       ; 9       ;
+; DE0_VGA:VGA_Driver|HS_counter[7]                                                                                       ; 8       ;
+; DE0_VGA:VGA_Driver|Add1~10                                                                                             ; 8       ;
 ; DE0_VGA:VGA_Driver|Equal7~0                                                                                            ; 7       ;
 ; DE0_VGA:VGA_Driver|HS_counter[4]                                                                                       ; 7       ;
+; move_ball:b1|y_ball[5]                                                                                                 ; 7       ;
+; move_ball:b1|y_ball[7]                                                                                                 ; 7       ;
+; move_ball:b1|y_ball[8]                                                                                                 ; 7       ;
 ; DE0_VGA:VGA_Driver|Add1~18                                                                                             ; 7       ;
-; DE0_VGA:VGA_Driver|Add1~10                                                                                             ; 7       ;
-; DE0_VGA:VGA_Driver|HS_counter[3]                                                                                       ; 6       ;
-; DE0_VGA:VGA_Driver|HS_counter[9]                                                                                       ; 6       ;
+; DE0_VGA:VGA_Driver|Add1~14                                                                                             ; 7       ;
+; DE0_VGA:VGA_Driver|Add0~0                                                                                              ; 6       ;
+; DE0_VGA:VGA_Driver|HS_counter[8]                                                                                       ; 6       ;
+; move_ball:b1|y_ball[1]                                                                                                 ; 6       ;
+; move_ball:b1|y_ball[2]                                                                                                 ; 6       ;
+; move_ball:b1|y_ball[4]                                                                                                 ; 6       ;
+; move_ball:b1|y_ball[6]                                                                                                 ; 6       ;
+; move_ball:b1|y_ball[9]                                                                                                 ; 6       ;
+; move_ball:b1|x_ball[1]                                                                                                 ; 6       ;
+; move_ball:b1|x_ball[2]                                                                                                 ; 6       ;
+; move_ball:b1|x_ball[3]                                                                                                 ; 6       ;
+; move_ball:b1|x_ball[4]                                                                                                 ; 6       ;
+; move_ball:b1|x_ball[5]                                                                                                 ; 6       ;
+; move_ball:b1|x_ball[6]                                                                                                 ; 6       ;
+; move_ball:b1|x_ball[7]                                                                                                 ; 6       ;
+; move_ball:b1|x_ball[8]                                                                                                 ; 6       ;
+; move_ball:b1|x_ball[9]                                                                                                 ; 6       ;
 ; DE0_VGA:VGA_Driver|Add1~16                                                                                             ; 6       ;
+; DE0_VGA:VGA_Driver|Add1~12                                                                                             ; 6       ;
 ; DE0_VGA:VGA_Driver|Add1~8                                                                                              ; 6       ;
-; DE0_VGA:VGA_Driver|Equal3~1                                                                                            ; 5       ;
+; DE0_VGA:VGA_Driver|Add1~0                                                                                              ; 6       ;
 ; DE0_VGA:VGA_Driver|VS_counter[1]                                                                                       ; 5       ;
 ; DE0_VGA:VGA_Driver|VS_counter[2]                                                                                       ; 5       ;
-; DE0_VGA:VGA_Driver|Add1~14                                                                                             ; 5       ;
+; move_ball:b1|y_ball[3]                                                                                                 ; 5       ;
 ; DE0_VGA:VGA_Driver|Add1~6                                                                                              ; 5       ;
 ; DE0_VGA:VGA_Driver|Add1~4                                                                                              ; 5       ;
-; DE0_VGA:VGA_Driver|LessThan1~2                                                                                         ; 4       ;
+; DE0_VGA:VGA_Driver|Add1~2                                                                                              ; 5       ;
+; make_box:draw_top_border|LessThan1~0                                                                                   ; 4       ;
 ; DE0_VGA:VGA_Driver|VS_counter[0]                                                                                       ; 4       ;
-; DE0_VGA:VGA_Driver|Equal1~1                                                                                            ; 4       ;
-; DE0_VGA:VGA_Driver|Add1~12                                                                                             ; 4       ;
-; DE0_VGA:VGA_Driver|Add1~2                                                                                              ; 4       ;
-; make_box:draw_P1_paddle|always0~0                                                                                      ; 3       ;
-; DE0_VGA:VGA_Driver|Add0~0                                                                                              ; 3       ;
-; make_box:draw_ball|always0~2                                                                                           ; 3       ;
-; DE0_VGA:VGA_Driver|LessThan1~3                                                                                         ; 3       ;
-; make_box:draw_top_border|always0~0                                                                                     ; 3       ;
+; DE0_VGA:VGA_Driver|WideNor0~1                                                                                          ; 4       ;
+; DE0_VGA:VGA_Driver|Equal2~0                                                                                            ; 4       ;
+; DE0_VGA:VGA_Driver|HS_counter[9]                                                                                       ; 4       ;
+; make_box:draw_bottom_border|always0~1                                                                                  ; 3       ;
+; make_box:draw_top_border|LessThan2~1                                                                                   ; 3       ;
+; make_box:draw_P1_paddle|always0~7                                                                                      ; 3       ;
 ; DE0_VGA:VGA_Driver|Equal5~1                                                                                            ; 3       ;
 ; DE0_VGA:VGA_Driver|VS_counter[4]                                                                                       ; 3       ;
 ; DE0_VGA:VGA_Driver|VS_counter[3]                                                                                       ; 3       ;
@@ -1081,59 +1106,73 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DE0_VGA:VGA_Driver|VS_counter[8]                                                                                       ; 3       ;
 ; DE0_VGA:VGA_Driver|VS_counter[10]                                                                                      ; 3       ;
 ; DE0_VGA:VGA_Driver|Equal4~0                                                                                            ; 3       ;
-; make_box:draw_ball|always0~0                                                                                           ; 3       ;
-; DE0_VGA:VGA_Driver|Equal3~0                                                                                            ; 3       ;
-; DE0_VGA:VGA_Driver|Equal2~0                                                                                            ; 3       ;
+; DE0_VGA:VGA_Driver|Equal1~2                                                                                            ; 3       ;
 ; DE0_VGA:VGA_Driver|HS_counter[10]                                                                                      ; 3       ;
 ; DE0_VGA:VGA_Driver|V_visible[0]                                                                                        ; 3       ;
+; DE0_VGA:VGA_Driver|H_visible[0]                                                                                        ; 3       ;
 ; DE0_VGA:VGA_Driver|VGA_VS[0]                                                                                           ; 3       ;
-; DE0_VGA:VGA_Driver|Add1~0                                                                                              ; 3       ;
-; make_box:draw_right_border|always0~0                                                                                   ; 2       ;
-; make_box:draw_bottom_border|LessThan3~0                                                                                ; 2       ;
-; make_box:draw_top_border|LessThan0~1                                                                                   ; 2       ;
-; make_box:draw_top_border|LessThan0~0                                                                                   ; 2       ;
-; make_box:draw_top_border|LessThan1~1                                                                                   ; 2       ;
+; DE0_VGA:VGA_Driver|VGA_HS[0]                                                                                           ; 3       ;
+; move_ball:b1|Equal0~2                                                                                                  ; 2       ;
+; move_ball:b1|y_direction[1]                                                                                            ; 2       ;
+; move_ball:b1|Equal1~2                                                                                                  ; 2       ;
+; move_ball:b1|Equal1~0                                                                                                  ; 2       ;
+; move_ball:b1|always0~5                                                                                                 ; 2       ;
+; move_ball:b1|x_ball[5]~12                                                                                              ; 2       ;
+; DE0_VGA:VGA_Driver|Add0~3                                                                                              ; 2       ;
+; DE0_VGA:VGA_Driver|Add0~2                                                                                              ; 2       ;
+; DE0_VGA:VGA_Driver|Add0~1                                                                                              ; 2       ;
+; make_box:draw_right_border|always0~1                                                                                   ; 2       ;
+; make_box:draw_bottom_border|LessThan2~2                                                                                ; 2       ;
+; make_box:draw_top_border|always0~0                                                                                     ; 2       ;
 ; make_box:draw_P2_paddle|always0~1                                                                                      ; 2       ;
-; make_box:draw_top_border|LessThan1~0                                                                                   ; 2       ;
+; make_box:draw_P1_paddle|always0~5                                                                                      ; 2       ;
+; make_box:draw_P1_paddle|always0~0                                                                                      ; 2       ;
 ; DE0_VGA:VGA_Driver|Equal1~3                                                                                            ; 2       ;
-; make_box:draw_P1_paddle|LessThan3~1                                                                                    ; 2       ;
-; make_box:draw_P1_paddle|LessThan2~1                                                                                    ; 2       ;
-; make_box:draw_ball|always0~1                                                                                           ; 2       ;
-; make_box:draw_top_border|always0~1                                                                                     ; 2       ;
 ; DE0_VGA:VGA_Driver|Equal5~2                                                                                            ; 2       ;
-; DE0_VGA:VGA_Driver|Equal1~2                                                                                            ; 2       ;
-; DE0_VGA:VGA_Driver|H_visible[0]                                                                                        ; 2       ;
-; DE0_VGA:VGA_Driver|VGA_HS[0]                                                                                           ; 2       ;
+; DE0_VGA:VGA_Driver|Equal3~0                                                                                            ; 2       ;
+; DE0_VGA:VGA_Driver|Equal1~1                                                                                            ; 2       ;
+; DE0_VGA:VGA_Driver|Add1~22                                                                                             ; 2       ;
+; DE0_VGA:VGA_Driver|Add1~20                                                                                             ; 2       ;
 ; CLK_50~input                                                                                                           ; 1       ;
-; DE0_VGA:VGA_Driver|LessThan1~4                                                                                         ; 1       ;
-; DE0_VGA:VGA_Driver|WideNor0                                                                                            ; 1       ;
-; make_box:draw_ball|always0~8                                                                                           ; 1       ;
-; make_box:draw_ball|always0~7                                                                                           ; 1       ;
-; make_box:draw_ball|always0~6                                                                                           ; 1       ;
-; make_box:draw_ball|always0~5                                                                                           ; 1       ;
-; make_box:draw_ball|always0~4                                                                                           ; 1       ;
-; make_box:draw_ball|always0~3                                                                                           ; 1       ;
-; make_box:draw_left_border|always0~1                                                                                    ; 1       ;
+; move_ball:b1|y_direction~3                                                                                             ; 1       ;
+; move_ball:b1|always0~11                                                                                                ; 1       ;
+; move_ball:b1|always0~10                                                                                                ; 1       ;
+; move_ball:b1|x_direction~1                                                                                             ; 1       ;
+; move_ball:b1|Equal0~1                                                                                                  ; 1       ;
+; move_ball:b1|Equal0~0                                                                                                  ; 1       ;
+; move_ball:b1|Equal1~1                                                                                                  ; 1       ;
+; move_ball:b1|x_ball[5]~35                                                                                              ; 1       ;
+; move_ball:b1|x_ball[5]~34                                                                                              ; 1       ;
+; move_ball:b1|x_ball[5]~33                                                                                              ; 1       ;
+; move_ball:b1|always0~9                                                                                                 ; 1       ;
+; move_ball:b1|always0~8                                                                                                 ; 1       ;
+; move_ball:b1|always0~7                                                                                                 ; 1       ;
+; move_ball:b1|always0~6                                                                                                 ; 1       ;
+; move_ball:b1|LessThan0~0                                                                                               ; 1       ;
+; move_ball:b1|always0~4                                                                                                 ; 1       ;
+; move_ball:b1|x_direction[5]                                                                                            ; 1       ;
+; make_box:draw_ball|always0~0                                                                                           ; 1       ;
 ; make_box:draw_left_border|always0~0                                                                                    ; 1       ;
+; make_box:draw_right_border|always0~3                                                                                   ; 1       ;
 ; make_box:draw_right_border|always0~2                                                                                   ; 1       ;
-; make_box:draw_right_border|always0~1                                                                                   ; 1       ;
-; make_box:draw_bottom_border|always0~1                                                                                  ; 1       ;
-; make_box:draw_bottom_border|LessThan2~2                                                                                ; 1       ;
+; make_box:draw_right_border|always0~0                                                                                   ; 1       ;
+; make_box:draw_bottom_border|always0~3                                                                                  ; 1       ;
+; make_box:draw_bottom_border|always0~2                                                                                  ; 1       ;
 ; make_box:draw_bottom_border|LessThan2~1                                                                                ; 1       ;
 ; make_box:draw_bottom_border|LessThan2~0                                                                                ; 1       ;
-; make_box:draw_bottom_border|always0~0                                                                                  ; 1       ;
-; make_box:draw_top_border|always0~4                                                                                     ; 1       ;
 ; make_box:draw_top_border|always0~3                                                                                     ; 1       ;
 ; make_box:draw_top_border|always0~2                                                                                     ; 1       ;
+; make_box:draw_top_border|always0~1                                                                                     ; 1       ;
+; make_box:draw_top_border|LessThan2~0                                                                                   ; 1       ;
+; make_box:draw_bottom_border|always0~0                                                                                  ; 1       ;
 ; make_box:draw_P2_paddle|always0~2                                                                                      ; 1       ;
 ; make_box:draw_P2_paddle|always0~0                                                                                      ; 1       ;
-; make_box:draw_P1_paddle|always0~5                                                                                      ; 1       ;
+; make_box:draw_P1_paddle|always0~8                                                                                      ; 1       ;
+; make_box:draw_P1_paddle|always0~6                                                                                      ; 1       ;
 ; make_box:draw_P1_paddle|always0~4                                                                                      ; 1       ;
 ; make_box:draw_P1_paddle|always0~3                                                                                      ; 1       ;
 ; make_box:draw_P1_paddle|always0~2                                                                                      ; 1       ;
 ; make_box:draw_P1_paddle|always0~1                                                                                      ; 1       ;
-; make_box:draw_P1_paddle|LessThan3~0                                                                                    ; 1       ;
-; make_box:draw_P1_paddle|LessThan2~0                                                                                    ; 1       ;
 ; DE0_VGA:VGA_Driver|VS_counter~4                                                                                        ; 1       ;
 ; DE0_VGA:VGA_Driver|VS_counter~3                                                                                        ; 1       ;
 ; DE0_VGA:VGA_Driver|VS_counter~2                                                                                        ; 1       ;
@@ -1143,16 +1182,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DE0_VGA:VGA_Driver|Selector5~0                                                                                         ; 1       ;
 ; DE0_VGA:VGA_Driver|Add4~28                                                                                             ; 1       ;
 ; DE0_VGA:VGA_Driver|Add4~27                                                                                             ; 1       ;
-; DE0_VGA:VGA_Driver|Add4~26                                                                                             ; 1       ;
-; DE0_VGA:VGA_Driver|Add4~25                                                                                             ; 1       ;
 ; DE0_VGA:VGA_Driver|Add4~24                                                                                             ; 1       ;
 ; DE0_VGA:VGA_Driver|Add4~23                                                                                             ; 1       ;
 ; DE0_VGA:VGA_Driver|Add4~22                                                                                             ; 1       ;
+; DE0_VGA:VGA_Driver|Add4~21                                                                                             ; 1       ;
+; DE0_VGA:VGA_Driver|Add4~20                                                                                             ; 1       ;
 ; DE0_VGA:VGA_Driver|Selector4~0                                                                                         ; 1       ;
 ; DE0_VGA:VGA_Driver|Selector3~0                                                                                         ; 1       ;
 ; DE0_VGA:VGA_Driver|Selector7~2                                                                                         ; 1       ;
 ; DE0_VGA:VGA_Driver|Selector7~1                                                                                         ; 1       ;
 ; DE0_VGA:VGA_Driver|Selector7~0                                                                                         ; 1       ;
+; DE0_VGA:VGA_Driver|Selector1~1                                                                                         ; 1       ;
 ; DE0_VGA:VGA_Driver|Selector1~0                                                                                         ; 1       ;
 ; always0~1                                                                                                              ; 1       ;
 ; make_box:draw_ball|box                                                                                                 ; 1       ;
@@ -1167,6 +1207,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DE0_VGA:VGA_Driver|Selector6~1                                                                                         ; 1       ;
 ; DE0_VGA:VGA_Driver|Selector6~0                                                                                         ; 1       ;
 ; DE0_VGA:VGA_Driver|Equal5~0                                                                                            ; 1       ;
+; DE0_VGA:VGA_Driver|Selector0~1                                                                                         ; 1       ;
 ; DE0_VGA:VGA_Driver|Selector0~0                                                                                         ; 1       ;
 ; DE0_VGA:VGA_Driver|Equal4~1                                                                                            ; 1       ;
 ; DE0_VGA:VGA_Driver|Equal1~0                                                                                            ; 1       ;
@@ -1183,9 +1224,118 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DE0_VGA:VGA_Driver|VGA_BUS_R[2]                                                                                        ; 1       ;
 ; DE0_VGA:VGA_Driver|VGA_BUS_R[1]                                                                                        ; 1       ;
 ; DE0_VGA:VGA_Driver|VGA_BUS_R[0]                                                                                        ; 1       ;
-; DE0_VGA:VGA_Driver|Add1~22                                                                                             ; 1       ;
+; move_ball:b1|y_ball[9]~27                                                                                              ; 1       ;
+; move_ball:b1|y_ball[8]~26                                                                                              ; 1       ;
+; move_ball:b1|y_ball[8]~25                                                                                              ; 1       ;
+; move_ball:b1|y_ball[7]~24                                                                                              ; 1       ;
+; move_ball:b1|y_ball[7]~23                                                                                              ; 1       ;
+; move_ball:b1|y_ball[6]~22                                                                                              ; 1       ;
+; move_ball:b1|y_ball[6]~21                                                                                              ; 1       ;
+; move_ball:b1|y_ball[5]~20                                                                                              ; 1       ;
+; move_ball:b1|y_ball[5]~19                                                                                              ; 1       ;
+; move_ball:b1|y_ball[4]~18                                                                                              ; 1       ;
+; move_ball:b1|y_ball[4]~17                                                                                              ; 1       ;
+; move_ball:b1|y_ball[3]~16                                                                                              ; 1       ;
+; move_ball:b1|y_ball[3]~15                                                                                              ; 1       ;
+; move_ball:b1|y_ball[2]~14                                                                                              ; 1       ;
+; move_ball:b1|y_ball[2]~13                                                                                              ; 1       ;
+; move_ball:b1|y_ball[1]~12                                                                                              ; 1       ;
+; move_ball:b1|y_ball[1]~11                                                                                              ; 1       ;
+; move_ball:b1|y_ball[1]~10                                                                                              ; 1       ;
+; move_ball:b1|x_ball[9]~31                                                                                              ; 1       ;
+; move_ball:b1|x_ball[8]~30                                                                                              ; 1       ;
+; move_ball:b1|x_ball[8]~29                                                                                              ; 1       ;
+; move_ball:b1|x_ball[7]~28                                                                                              ; 1       ;
+; move_ball:b1|x_ball[7]~27                                                                                              ; 1       ;
+; move_ball:b1|x_ball[6]~26                                                                                              ; 1       ;
+; move_ball:b1|x_ball[6]~25                                                                                              ; 1       ;
+; move_ball:b1|x_ball[5]~24                                                                                              ; 1       ;
+; move_ball:b1|x_ball[5]~23                                                                                              ; 1       ;
+; move_ball:b1|x_ball[4]~22                                                                                              ; 1       ;
+; move_ball:b1|x_ball[4]~21                                                                                              ; 1       ;
+; move_ball:b1|x_ball[3]~20                                                                                              ; 1       ;
+; move_ball:b1|x_ball[3]~19                                                                                              ; 1       ;
+; move_ball:b1|x_ball[2]~18                                                                                              ; 1       ;
+; move_ball:b1|x_ball[2]~17                                                                                              ; 1       ;
+; move_ball:b1|x_ball[1]~16                                                                                              ; 1       ;
+; move_ball:b1|x_ball[1]~15                                                                                              ; 1       ;
+; move_ball:b1|x_ball[0]~14                                                                                              ; 1       ;
+; move_ball:b1|x_ball[0]~13                                                                                              ; 1       ;
+; make_box:draw_ball|LessThan3~18                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan3~17                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan3~15                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan3~13                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan3~11                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan3~9                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan3~7                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan3~5                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan3~3                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan3~1                                                                                         ; 1       ;
+; make_box:draw_ball|Add1~16                                                                                             ; 1       ;
+; make_box:draw_ball|Add1~15                                                                                             ; 1       ;
+; make_box:draw_ball|Add1~14                                                                                             ; 1       ;
+; make_box:draw_ball|Add1~13                                                                                             ; 1       ;
+; make_box:draw_ball|Add1~12                                                                                             ; 1       ;
+; make_box:draw_ball|Add1~11                                                                                             ; 1       ;
+; make_box:draw_ball|Add1~10                                                                                             ; 1       ;
+; make_box:draw_ball|Add1~9                                                                                              ; 1       ;
+; make_box:draw_ball|Add1~8                                                                                              ; 1       ;
+; make_box:draw_ball|Add1~7                                                                                              ; 1       ;
+; make_box:draw_ball|Add1~6                                                                                              ; 1       ;
+; make_box:draw_ball|Add1~5                                                                                              ; 1       ;
+; make_box:draw_ball|Add1~4                                                                                              ; 1       ;
+; make_box:draw_ball|Add1~3                                                                                              ; 1       ;
+; make_box:draw_ball|Add1~2                                                                                              ; 1       ;
+; make_box:draw_ball|Add1~1                                                                                              ; 1       ;
+; make_box:draw_ball|Add1~0                                                                                              ; 1       ;
+; make_box:draw_ball|LessThan2~18                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan2~17                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan2~15                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan2~13                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan2~11                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan2~9                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan2~7                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan2~5                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan2~3                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan2~1                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan1~18                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan1~17                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan1~15                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan1~13                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan1~11                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan1~9                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan1~7                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan1~5                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan1~3                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan1~1                                                                                         ; 1       ;
+; make_box:draw_ball|Add0~16                                                                                             ; 1       ;
+; make_box:draw_ball|Add0~15                                                                                             ; 1       ;
+; make_box:draw_ball|Add0~14                                                                                             ; 1       ;
+; make_box:draw_ball|Add0~13                                                                                             ; 1       ;
+; make_box:draw_ball|Add0~12                                                                                             ; 1       ;
+; make_box:draw_ball|Add0~11                                                                                             ; 1       ;
+; make_box:draw_ball|Add0~10                                                                                             ; 1       ;
+; make_box:draw_ball|Add0~9                                                                                              ; 1       ;
+; make_box:draw_ball|Add0~8                                                                                              ; 1       ;
+; make_box:draw_ball|Add0~7                                                                                              ; 1       ;
+; make_box:draw_ball|Add0~6                                                                                              ; 1       ;
+; make_box:draw_ball|Add0~5                                                                                              ; 1       ;
+; make_box:draw_ball|Add0~4                                                                                              ; 1       ;
+; make_box:draw_ball|Add0~3                                                                                              ; 1       ;
+; make_box:draw_ball|Add0~2                                                                                              ; 1       ;
+; make_box:draw_ball|Add0~1                                                                                              ; 1       ;
+; make_box:draw_ball|Add0~0                                                                                              ; 1       ;
+; make_box:draw_ball|LessThan0~18                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan0~17                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan0~15                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan0~13                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan0~11                                                                                        ; 1       ;
+; make_box:draw_ball|LessThan0~9                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan0~7                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan0~5                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan0~3                                                                                         ; 1       ;
+; make_box:draw_ball|LessThan0~1                                                                                         ; 1       ;
 ; DE0_VGA:VGA_Driver|Add1~21                                                                                             ; 1       ;
-; DE0_VGA:VGA_Driver|Add1~20                                                                                             ; 1       ;
 ; DE0_VGA:VGA_Driver|Add1~19                                                                                             ; 1       ;
 ; DE0_VGA:VGA_Driver|Add1~17                                                                                             ; 1       ;
 ; DE0_VGA:VGA_Driver|Add1~15                                                                                             ; 1       ;
@@ -1217,7 +1367,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DE0_VGA:VGA_Driver|Add3~2                                                                                              ; 1       ;
 ; DE0_VGA:VGA_Driver|Add3~1                                                                                              ; 1       ;
 ; DE0_VGA:VGA_Driver|Add3~0                                                                                              ; 1       ;
-; DE0_VGA:VGA_Driver|Add4~20                                                                                             ; 1       ;
+; DE0_VGA:VGA_Driver|Add4~25                                                                                             ; 1       ;
 ; DE0_VGA:VGA_Driver|Add4~19                                                                                             ; 1       ;
 ; DE0_VGA:VGA_Driver|Add4~18                                                                                             ; 1       ;
 ; DE0_VGA:VGA_Driver|Add4~17                                                                                             ; 1       ;
@@ -1247,139 +1397,145 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 121 / 47,787 ( < 1 % ) ;
+; Block interconnects         ; 260 / 47,787 ( < 1 % ) ;
 ; C16 interconnects           ; 0 / 1,804 ( 0 % )      ;
-; C4 interconnects            ; 60 / 31,272 ( < 1 % )  ;
-; Direct links                ; 36 / 47,787 ( < 1 % )  ;
+; C4 interconnects            ; 86 / 31,272 ( < 1 % )  ;
+; Direct links                ; 107 / 47,787 ( < 1 % ) ;
 ; Global clocks               ; 1 / 20 ( 5 % )         ;
-; Local interconnects         ; 81 / 15,408 ( < 1 % )  ;
-; R24 interconnects           ; 0 / 1,775 ( 0 % )      ;
-; R4 interconnects            ; 33 / 41,310 ( < 1 % )  ;
+; Local interconnects         ; 101 / 15,408 ( < 1 % ) ;
+; R24 interconnects           ; 3 / 1,775 ( < 1 % )    ;
+; R4 interconnects            ; 77 / 41,310 ( < 1 % )  ;
 +-----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 13.50) ; Number of LABs  (Total = 10) ;
+; Number of Logic Elements  (Average = 13.47) ; Number of LABs  (Total = 17) ;
 +---------------------------------------------+------------------------------+
 ; 1                                           ; 0                            ;
-; 2                                           ; 1                            ;
+; 2                                           ; 0                            ;
 ; 3                                           ; 0                            ;
 ; 4                                           ; 0                            ;
 ; 5                                           ; 0                            ;
 ; 6                                           ; 0                            ;
 ; 7                                           ; 0                            ;
 ; 8                                           ; 0                            ;
-; 9                                           ; 0                            ;
+; 9                                           ; 2                            ;
 ; 10                                          ; 1                            ;
-; 11                                          ; 1                            ;
-; 12                                          ; 0                            ;
+; 11                                          ; 3                            ;
+; 12                                          ; 2                            ;
 ; 13                                          ; 0                            ;
 ; 14                                          ; 0                            ;
 ; 15                                          ; 0                            ;
-; 16                                          ; 7                            ;
+; 16                                          ; 9                            ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.00) ; Number of LABs  (Total = 10) ;
+; LAB-wide Signals  (Average = 0.94) ; Number of LABs  (Total = 17) ;
 +------------------------------------+------------------------------+
-; 1 Clock                            ; 8                            ;
+; 1 Clock                            ; 12                           ;
 ; 1 Clock enable                     ; 2                            ;
+; 1 Sync. load                       ; 2                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 17.00) ; Number of LABs  (Total = 10) ;
+; Number of Signals Sourced  (Average = 15.24) ; Number of LABs  (Total = 17) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
-; 2                                            ; 0                            ;
-; 3                                            ; 1                            ;
+; 1                                            ; 1                            ;
+; 2                                            ; 1                            ;
+; 3                                            ; 0                            ;
 ; 4                                            ; 0                            ;
-; 5                                            ; 0                            ;
+; 5                                            ; 1                            ;
 ; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
 ; 8                                            ; 0                            ;
-; 9                                            ; 0                            ;
+; 9                                            ; 3                            ;
 ; 10                                           ; 0                            ;
-; 11                                           ; 1                            ;
+; 11                                           ; 0                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 0                            ;
 ; 14                                           ; 1                            ;
 ; 15                                           ; 0                            ;
 ; 16                                           ; 2                            ;
 ; 17                                           ; 0                            ;
-; 18                                           ; 1                            ;
-; 19                                           ; 0                            ;
+; 18                                           ; 0                            ;
+; 19                                           ; 2                            ;
 ; 20                                           ; 0                            ;
-; 21                                           ; 2                            ;
-; 22                                           ; 0                            ;
+; 21                                           ; 1                            ;
+; 22                                           ; 2                            ;
 ; 23                                           ; 0                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 2                            ;
+; 24                                           ; 1                            ;
+; 25                                           ; 1                            ;
+; 26                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 8.80) ; Number of LABs  (Total = 10) ;
+; Number of Signals Sourced Out  (Average = 8.35) ; Number of LABs  (Total = 17) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 1                            ;
-; 2                                               ; 0                            ;
-; 3                                               ; 0                            ;
+; 1                                               ; 2                            ;
+; 2                                               ; 1                            ;
+; 3                                               ; 1                            ;
 ; 4                                               ; 0                            ;
-; 5                                               ; 2                            ;
+; 5                                               ; 1                            ;
 ; 6                                               ; 1                            ;
 ; 7                                               ; 0                            ;
-; 8                                               ; 0                            ;
-; 9                                               ; 0                            ;
+; 8                                               ; 1                            ;
+; 9                                               ; 2                            ;
 ; 10                                              ; 1                            ;
-; 11                                              ; 2                            ;
+; 11                                              ; 3                            ;
 ; 12                                              ; 2                            ;
 ; 13                                              ; 0                            ;
 ; 14                                              ; 0                            ;
 ; 15                                              ; 1                            ;
+; 16                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 10.70) ; Number of LABs  (Total = 10) ;
+; Number of Distinct Inputs  (Average = 13.41) ; Number of LABs  (Total = 17) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 1                            ;
 ; 3                                            ; 0                            ;
-; 4                                            ; 0                            ;
-; 5                                            ; 1                            ;
-; 6                                            ; 1                            ;
+; 4                                            ; 1                            ;
+; 5                                            ; 2                            ;
+; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
-; 8                                            ; 1                            ;
+; 8                                            ; 0                            ;
 ; 9                                            ; 1                            ;
-; 10                                           ; 0                            ;
-; 11                                           ; 2                            ;
+; 10                                           ; 4                            ;
+; 11                                           ; 1                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 0                            ;
 ; 14                                           ; 0                            ;
 ; 15                                           ; 1                            ;
-; 16                                           ; 1                            ;
+; 16                                           ; 0                            ;
 ; 17                                           ; 0                            ;
 ; 18                                           ; 0                            ;
 ; 19                                           ; 0                            ;
-; 20                                           ; 0                            ;
-; 21                                           ; 0                            ;
-; 22                                           ; 0                            ;
+; 20                                           ; 2                            ;
+; 21                                           ; 1                            ;
+; 22                                           ; 1                            ;
 ; 23                                           ; 0                            ;
-; 24                                           ; 1                            ;
+; 24                                           ; 0                            ;
+; 25                                           ; 0                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 2                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1533,7 +1689,7 @@ Info (332130): Timing requirements not specified -- quality metrics such as perf
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -1541,23 +1697,23 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X31_Y20 to location X41_Y29
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X21_Y10 to location X30_Y19
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.09 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.05 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Info (144001): Generated suppressed messages file C:/ECE275_Labs/Pong/output_files/Pong_top.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4888 megabytes
-    Info: Processing ended: Wed Dec 01 16:14:39 2021
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 4884 megabytes
+    Info: Processing ended: Sat Dec 04 22:59:45 2021
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +----------------------------+

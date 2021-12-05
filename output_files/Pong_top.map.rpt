@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pong_top
-Wed Dec 01 16:14:33 2021
+Sat Dec 04 22:59:40 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -17,19 +17,21 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   9. Registers Removed During Synthesis
  10. General Register Statistics
  11. Inverted Register Statistics
- 12. Parameter Settings for User Entity Instance: DE0_VGA:VGA_Driver
- 13. Parameter Settings for User Entity Instance: DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component
- 14. altpll Parameter Settings by Entity Instance
- 15. Port Connectivity Checks: "DE0_VGA:VGA_Driver"
- 16. Port Connectivity Checks: "make_box:draw_ball"
- 17. Port Connectivity Checks: "make_box:draw_left_border"
- 18. Port Connectivity Checks: "make_box:draw_right_border"
- 19. Port Connectivity Checks: "make_box:draw_bottom_border"
- 20. Port Connectivity Checks: "make_box:draw_top_border"
- 21. Port Connectivity Checks: "make_box:draw_P2_paddle"
- 22. Port Connectivity Checks: "make_box:draw_P1_paddle"
- 23. Elapsed Time Per Partition
- 24. Analysis & Synthesis Messages
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: DE0_VGA:VGA_Driver
+ 14. Parameter Settings for User Entity Instance: DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component
+ 15. altpll Parameter Settings by Entity Instance
+ 16. Port Connectivity Checks: "DE0_VGA:VGA_Driver"
+ 17. Port Connectivity Checks: "make_box:draw_ball"
+ 18. Port Connectivity Checks: "make_box:draw_left_border"
+ 19. Port Connectivity Checks: "make_box:draw_right_border"
+ 20. Port Connectivity Checks: "make_box:draw_bottom_border"
+ 21. Port Connectivity Checks: "make_box:draw_top_border"
+ 22. Port Connectivity Checks: "make_box:draw_P2_paddle"
+ 23. Port Connectivity Checks: "make_box:draw_P1_paddle"
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -55,15 +57,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Dec 01 16:14:33 2021           ;
+; Analysis & Synthesis Status        ; Successful - Sat Dec 04 22:59:40 2021           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Pong_top                                        ;
 ; Top-level Entity Name              ; Pong_top                                        ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 135                                             ;
-;     Total combinational functions  ; 124                                             ;
-;     Dedicated logic registers      ; 46                                              ;
-; Total registers                    ; 46                                              ;
+; Total logic elements               ; 229                                             ;
+;     Total combinational functions  ; 218                                             ;
+;     Dedicated logic registers      ; 67                                              ;
+; Total registers                    ; 67                                              ;
 ; Total pins                         ; 15                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -176,6 +178,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                         ; File Name with Absolute Path                                        ; Library ;
 +----------------------------------+-----------------+-----------------------------------+---------------------------------------------------------------------+---------+
 ; Pong_top.v                       ; yes             ; User Verilog HDL File             ; C:/ECE275_Labs/Pong/Pong_top.v                                      ;         ;
+; move_ball.v                      ; yes             ; User Verilog HDL File             ; C:/ECE275_Labs/Pong/move_ball.v                                     ;         ;
 ; ./DE0_VGA.v                      ; yes             ; Auto-Found Verilog HDL File       ; C:/ECE275_Labs/Pong/DE0_VGA.v                                       ;         ;
 ; pll_pixel_clk.v                  ; yes             ; Auto-Found Wizard-Generated File  ; C:/ECE275_Labs/Pong/pll_pixel_clk.v                                 ;         ;
 ; altpll.tdf                       ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf        ;         ;
@@ -192,20 +195,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                                   ;
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 135                                                                                                                     ;
+; Estimated Total logic elements              ; 229                                                                                                                     ;
 ;                                             ;                                                                                                                         ;
-; Total combinational functions               ; 124                                                                                                                     ;
+; Total combinational functions               ; 218                                                                                                                     ;
 ; Logic element usage by number of LUT inputs ;                                                                                                                         ;
-;     -- 4 input functions                    ; 62                                                                                                                      ;
-;     -- 3 input functions                    ; 22                                                                                                                      ;
-;     -- <=2 input functions                  ; 40                                                                                                                      ;
+;     -- 4 input functions                    ; 82                                                                                                                      ;
+;     -- 3 input functions                    ; 72                                                                                                                      ;
+;     -- <=2 input functions                  ; 64                                                                                                                      ;
 ;                                             ;                                                                                                                         ;
 ; Logic elements by mode                      ;                                                                                                                         ;
-;     -- normal mode                          ; 93                                                                                                                      ;
-;     -- arithmetic mode                      ; 31                                                                                                                      ;
+;     -- normal mode                          ; 117                                                                                                                     ;
+;     -- arithmetic mode                      ; 101                                                                                                                     ;
 ;                                             ;                                                                                                                         ;
-; Total registers                             ; 46                                                                                                                      ;
-;     -- Dedicated logic registers            ; 46                                                                                                                      ;
+; Total registers                             ; 67                                                                                                                      ;
+;     -- Dedicated logic registers            ; 67                                                                                                                      ;
 ;     -- I/O registers                        ; 0                                                                                                                       ;
 ;                                             ;                                                                                                                         ;
 ; I/O pins                                    ; 15                                                                                                                      ;
@@ -214,9 +217,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1                                                                                                                       ;
 ;                                             ;                                                                                                                         ;
 ; Maximum fan-out node                        ; DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component|PLL_PIXEL_CLK_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 47                                                                                                                      ;
-; Total fan-out                               ; 524                                                                                                                     ;
-; Average fan-out                             ; 2.61                                                                                                                    ;
+; Maximum fan-out                             ; 68                                                                                                                      ;
+; Total fan-out                               ; 872                                                                                                                     ;
+; Average fan-out                             ; 2.76                                                                                                                    ;
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -225,18 +228,19 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                              ; Library Name ;
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
-; |Pong_top                                         ; 124 (2)           ; 46 (1)       ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |Pong_top                                                                                                        ; work         ;
-;    |DE0_VGA:VGA_Driver|                           ; 80 (80)           ; 38 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|DE0_VGA:VGA_Driver                                                                                     ; work         ;
+; |Pong_top                                         ; 218 (3)           ; 67 (1)       ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |Pong_top                                                                                                        ; work         ;
+;    |DE0_VGA:VGA_Driver|                           ; 81 (81)           ; 38 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|DE0_VGA:VGA_Driver                                                                                     ; work         ;
 ;       |PLL_PIXEL_CLK:pll_inst0|                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0                                                             ; work         ;
 ;          |altpll:altpll_component|                ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component                                     ; work         ;
 ;             |PLL_PIXEL_CLK_altpll:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component|PLL_PIXEL_CLK_altpll:auto_generated ; work         ;
-;    |make_box:draw_P1_paddle|                      ; 10 (10)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_P1_paddle                                                                                ; work         ;
+;    |make_box:draw_P1_paddle|                      ; 9 (9)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_P1_paddle                                                                                ; work         ;
 ;    |make_box:draw_P2_paddle|                      ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_P2_paddle                                                                                ; work         ;
-;    |make_box:draw_ball|                           ; 9 (9)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_ball                                                                                     ; work         ;
-;    |make_box:draw_bottom_border|                  ; 6 (6)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_bottom_border                                                                            ; work         ;
-;    |make_box:draw_left_border|                    ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_left_border                                                                              ; work         ;
-;    |make_box:draw_right_border|                   ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_right_border                                                                             ; work         ;
-;    |make_box:draw_top_border|                     ; 9 (9)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_top_border                                                                               ; work         ;
+;    |make_box:draw_ball|                           ; 59 (59)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_ball                                                                                     ; work         ;
+;    |make_box:draw_bottom_border|                  ; 7 (7)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_bottom_border                                                                            ; work         ;
+;    |make_box:draw_left_border|                    ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_left_border                                                                              ; work         ;
+;    |make_box:draw_right_border|                   ; 4 (4)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_right_border                                                                             ; work         ;
+;    |make_box:draw_top_border|                     ; 7 (7)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_top_border                                                                               ; work         ;
+;    |move_ball:b1|                                 ; 44 (44)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|move_ball:b1                                                                                           ; work         ;
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -250,14 +254,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+------------------------------------------------------+-------------------------------------+
 
 
-+---------------------------------------------------------------------+
-; Registers Removed During Synthesis                                  ;
-+----------------------------------------+----------------------------+
-; Register name                          ; Reason for Removal         ;
-+----------------------------------------+----------------------------+
-; pixel_color[1..11]                     ; Merged with pixel_color[0] ;
-; Total Number of Removed Registers = 11 ;                            ;
-+----------------------------------------+----------------------------+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++----------------------------------------+-----------------------------------------+
+; Register name                          ; Reason for Removal                      ;
++----------------------------------------+-----------------------------------------+
+; pixel_color[1..11]                     ; Merged with pixel_color[0]              ;
+; move_ball:b1|x_direction[0]            ; Stuck at VCC due to stuck port data_in  ;
+; move_ball:b1|y_direction[0]            ; Stuck at VCC due to stuck port data_in  ;
+; move_ball:b1|x_direction[1..4,6..31]   ; Merged with move_ball:b1|x_direction[5] ;
+; move_ball:b1|y_ball[0]                 ; Merged with move_ball:b1|x_ball[0]      ;
+; move_ball:b1|y_direction[2..31]        ; Merged with move_ball:b1|y_direction[1] ;
+; Total Number of Removed Registers = 74 ;                                         ;
++----------------------------------------+-----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -265,9 +274,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 46    ;
+; Total registers                              ; 67    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 19    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 11    ;
@@ -280,10 +289,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; DE0_VGA:VGA_Driver|VGA_HS[0]           ; 2       ;
+; DE0_VGA:VGA_Driver|VGA_HS[0]           ; 3       ;
 ; DE0_VGA:VGA_Driver|VGA_VS[0]           ; 3       ;
 ; Total number of inverted registers = 2 ;         ;
 +----------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |Pong_top|move_ball:b1|x_ball[5]      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Pong_top|move_ball:b1|x_direction[5] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
 
 
 +-----------------------------------------------------------------+
@@ -707,28 +726,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------+
-; Port Connectivity Checks: "make_box:draw_ball"         ;
-+----------------------+-------+----------+--------------+
-; Port                 ; Type  ; Severity ; Details      ;
-+----------------------+-------+----------+--------------+
-; box_width[9..3]      ; Input ; Info     ; Stuck at GND ;
-; box_width[2]         ; Input ; Info     ; Stuck at VCC ;
-; box_width[1]         ; Input ; Info     ; Stuck at GND ;
-; box_width[0]         ; Input ; Info     ; Stuck at VCC ;
-; box_height[9..3]     ; Input ; Info     ; Stuck at GND ;
-; box_height[2]        ; Input ; Info     ; Stuck at VCC ;
-; box_height[1]        ; Input ; Info     ; Stuck at GND ;
-; box_height[0]        ; Input ; Info     ; Stuck at VCC ;
-; box_x_location[5..0] ; Input ; Info     ; Stuck at GND ;
-; box_x_location[9]    ; Input ; Info     ; Stuck at GND ;
-; box_x_location[8]    ; Input ; Info     ; Stuck at VCC ;
-; box_x_location[7]    ; Input ; Info     ; Stuck at GND ;
-; box_x_location[6]    ; Input ; Info     ; Stuck at VCC ;
-; box_y_location[7..4] ; Input ; Info     ; Stuck at VCC ;
-; box_y_location[9..8] ; Input ; Info     ; Stuck at GND ;
-; box_y_location[3..0] ; Input ; Info     ; Stuck at GND ;
-+----------------------+-------+----------+--------------+
++----------------------------------------------------+
+; Port Connectivity Checks: "make_box:draw_ball"     ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; box_width[9..3]  ; Input ; Info     ; Stuck at GND ;
+; box_width[2]     ; Input ; Info     ; Stuck at VCC ;
+; box_width[1]     ; Input ; Info     ; Stuck at GND ;
+; box_width[0]     ; Input ; Info     ; Stuck at VCC ;
+; box_height[9..3] ; Input ; Info     ; Stuck at GND ;
+; box_height[2]    ; Input ; Info     ; Stuck at VCC ;
+; box_height[1]    ; Input ; Info     ; Stuck at GND ;
+; box_height[0]    ; Input ; Info     ; Stuck at VCC ;
++------------------+-------+----------+--------------+
 
 
 +-------------------------------------------------------+
@@ -760,9 +771,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; box_height[9]        ; Input ; Info     ; Stuck at GND ;
 ; box_x_location[6..2] ; Input ; Info     ; Stuck at VCC ;
 ; box_x_location[8..7] ; Input ; Info     ; Stuck at GND ;
+; box_x_location[1..0] ; Input ; Info     ; Stuck at GND ;
 ; box_x_location[9]    ; Input ; Info     ; Stuck at VCC ;
-; box_x_location[1]    ; Input ; Info     ; Stuck at GND ;
-; box_x_location[0]    ; Input ; Info     ; Stuck at VCC ;
 ; box_y_location       ; Input ; Info     ; Stuck at GND ;
 +----------------------+-------+----------+--------------+
 
@@ -877,7 +887,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Dec 01 16:14:32 2021
+    Info: Processing started: Sat Dec 04 22:59:38 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pong -c Pong_top
 Warning (125092): Tcl Script File PLL_PIXEL_CLK.qip not found
     Info (125063): set_global_assignment -name QIP_FILE PLL_PIXEL_CLK.qip
@@ -886,8 +896,17 @@ Info (12021): Found 3 design units, including 3 entities, in source file pong_to
     Info (12023): Found entity 1: DE0_VGA
     Info (12023): Found entity 2: Pong_top
     Info (12023): Found entity 3: make_box
+Info (12021): Found 1 design units, including 1 entities, in source file move_ball.v
+    Info (12023): Found entity 1: move_ball
 Info (12127): Elaborating entity "Pong_top" for the top level hierarchy
 Info (12128): Elaborating entity "make_box" for hierarchy "make_box:draw_P1_paddle"
+Info (12128): Elaborating entity "move_ball" for hierarchy "move_ball:b1"
+Warning (10230): Verilog HDL assignment warning at move_ball.v(46): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at move_ball.v(47): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at move_ball.v(54): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at move_ball.v(55): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at move_ball.v(62): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at move_ball.v(63): truncated value with size 32 to match size of target (10)
 Info (12128): Elaborating entity "DE0_VGA" for hierarchy "DE0_VGA:VGA_Driver"
 Warning (10230): Verilog HDL assignment warning at DE0_VGA.v(53): truncated value with size 32 to match size of target (11)
 Warning (10230): Verilog HDL assignment warning at DE0_VGA.v(54): truncated value with size 32 to match size of target (11)
@@ -956,17 +975,24 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/pll_
 Info (12128): Elaborating entity "PLL_PIXEL_CLK_altpll" for hierarchy "DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component|PLL_PIXEL_CLK_altpll:auto_generated"
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/ECE275_Labs/Pong/output_files/Pong_top.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 152 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 246 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 136 logic cells
+    Info (21061): Implemented 230 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4599 megabytes
-    Info: Processing ended: Wed Dec 01 16:14:33 2021
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4598 megabytes
+    Info: Processing ended: Sat Dec 04 22:59:40 2021
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/ECE275_Labs/Pong/output_files/Pong_top.map.smsg.
 
 

@@ -2,26 +2,28 @@
 
 module Pong_top(CLK_50, VGA_BUS_R, VGA_BUS_G, VGA_BUS_B, VGA_HS, VGA_VS);
 
-input	wire			CLK_50;
+input	wire							CLK_50;
 
-output	reg	[3:0]		VGA_BUS_R;		//Output Red
-output	reg	[3:0]		VGA_BUS_G;		//Output Green
-output	reg	[3:0]		VGA_BUS_B;		//Output Blue
+output 	reg	[3:0]			VGA_BUS_R;		//Output Red
+output	reg	[3:0]			VGA_BUS_G;		//Output Green
+output	reg	[3:0]			VGA_BUS_B;		//Output Blue
 
-output	reg	[0:0]		VGA_HS;			//Horizontal Sync
-output	reg	[0:0]		VGA_VS;			//Vertical Sync
+output	reg	[0:0]				VGA_HS;			//Horizontal Sync
+output	reg	[0:0]				VGA_VS;			//Vertical Sync
 
-reg			[9:0]		X_pix;			//Location in X of the driver
-reg			[9:0]		Y_pix;			//Location in Y of the driver
+reg			[9:0]					 X_pix;			//Location in X of the driver
+reg			[9:0]					 Y_pix;			//Location in Y of the driver
 
-reg			[0:0]		H_visible;		//H_blank?
-reg			[0:0]		V_visible;		//V_blank?
+reg			[0:0]				H_visible;		//H_blank?
+reg			[0:0]				V_visible;		//V_blank?
 
-wire		[0:0]		pixel_clk;		//Pixel clock. Every clock a pixel is being drawn. 
-reg			[9:0]		pixel_cnt;		//How many pixels have been output.
+wire			[0:0]				pixel_clk;		//Pixel clock. Every clock a pixel is being drawn. 
+reg			[9:0]				pixel_cnt;		//How many pixels have been output.
 
-reg			[11:0]		pixel_color;	//12 Bits representing color of pixel, 4 bits for R, G, and B
+reg			[11:0]		 pixel_color;	//12 Bits representing color of pixel, 4 bits for R, G, and B
 													//4 bits for Blue are in most significant position, Red in least
+wire [9:0] new_ball_x_location;
+wire [9:0] new_ball_y_location;
 
 //Draw the player one paddle
 	wire [9:0] P1_paddle_width = 10;
@@ -98,7 +100,7 @@ make_box draw_bottom_border (
 //Draw the right border
 	wire [9:0] right_border_width = 2;
 	wire [9:0] right_border_height = 480;
-	wire [9:0] right_border_x_location = 637;
+	wire [9:0] right_border_x_location = 636;
 	wire [9:0] right_border_y_location = 0;
 	reg right_border;
 	
@@ -134,8 +136,8 @@ make_box draw_left_border (
 //Draw the ball
 	wire [9:0] ball_width = 5;
 	wire [9:0] ball_height = 5;
-	wire [9:0] ball_x_location = 320;
-	wire [9:0] ball_y_location = 240;
+	wire [9:0] ball_x_location = new_ball_x_location;
+	wire [9:0] ball_y_location = new_ball_y_location;
 	reg ball;
 	
 make_box draw_ball (
@@ -148,7 +150,9 @@ make_box draw_ball (
 	.pixel_clk(pixel_clk),
 	.box(ball)
 );
-							
+
+move_ball b1(pixel_clk, X_pix, Y_pix, P1_paddle_x_location, P1_paddle_y_location, P2_paddle_x_location, P2_paddle_y_location, new_ball_x_location, new_ball_y_location);	
+		
 always @(posedge pixel_clk)
 	begin
 		if (P1_paddle || P2_paddle || top_border || bottom_border || right_border || left_border || ball) pixel_color <= 12'b1111_1111_1111;
@@ -172,7 +176,7 @@ always @(posedge pixel_clk)
 			.pixel_clk(pixel_clk),
 			.pixel_cnt(pixel_cnt)
 		);
-
+		
 endmodule
 
 module make_box (
