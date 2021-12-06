@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP3C16F484) Path("C:/ECE275_Labs/Pong/output_files/") File("Pong_top.sof") MfrSpec(OpMask(1));
+		Device PartName(EP3C16F484) Path("C:/Users/carte/OneDrive/Documents/ECE275/Pong_275/Pong/output_files/") File("Pong_top.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

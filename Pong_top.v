@@ -1,7 +1,9 @@
 `include "./DE0_VGA.v"
 
-module Pong_top(CLK_50, VGA_BUS_R, VGA_BUS_G, VGA_BUS_B, VGA_HS, VGA_VS);
+module Pong_top(CLK_50, VGA_BUS_R, VGA_BUS_G, VGA_BUS_B, VGA_HS, VGA_VS,ORG_BUTTON);
 
+
+input [2:0] ORG_BUTTON;
 input	wire							CLK_50;
 
 output 	reg	[3:0]			VGA_BUS_R;		//Output Red
@@ -25,11 +27,47 @@ reg			[11:0]		 pixel_color;	//12 Bits representing color of pixel, 4 bits for R,
 wire [9:0] new_ball_x_location;
 wire [9:0] new_ball_y_location;
 
+wire reset_n; //Reset
+wire BUTTON[2:0]; //Button after debounce
+
+wire negedge_button_1; //counter for Button[1]
+wire negedge_button_2; //counter for Button[2]
+
+reg [7:0] counter; //8-bit counter 
+reg out_BUTTON_1; //Button1 register output
+reg out_BUTTON_2; //Button2 register output
+
+genvar debounce_idx;
+
+generate
+	for (debounce_idx = 0; debounce_idx < 3; debounce_idx = debounce_idx + 1) begin: button_debouncer_gen
+		// This is BUTTON[debounce_idx] Debounce Circuit //
+		button_debouncer	button_debouncer_inst(
+		.clk     (CLK_50),
+		.rst_n   (1'b1),
+		.data_in (ORG_BUTTON[debounce_idx]),
+		.data_out(BUTTON[debounce_idx])			
+		);
+	end
+endgenerate
+
+assign reset_n   = BUTTON[0]; 			 		 
+assign negedge_button_1 = ((BUTTON[1] == 0) && (out_BUTTON_1 == 1)) ? 1'b1: 1'b0; // negedge button 1 
+assign negedge_button_2 = ((BUTTON[2] == 0) && (out_BUTTON_2 == 1)) ? 1'b1: 1'b0; // negedge button 2
+
+always @ (posedge CLK_50 )
+	begin
+		out_BUTTON_1 <= BUTTON[1];
+		out_BUTTON_2 <= BUTTON[2];
+	end
+	
+wire [9:0] new_paddle_location;
+
 //Draw the player one paddle
 	wire [9:0] P1_paddle_width = 10;
 	wire [9:0] P1_paddle_height = 120;
 	wire [9:0] P1_paddle_x_location = 20;
-	wire [9:0] P1_paddle_y_location = 180;
+	wire [9:0] P1_paddle_y_location = new_paddle_location;
 	reg P1_paddle;
 
 make_box draw_P1_paddle(
@@ -41,13 +79,14 @@ make_box draw_P1_paddle(
 	.box_y_location(P1_paddle_y_location),
 	.pixel_clk(pixel_clk),
 	.box(P1_paddle)
-);													
+);
+													
 													
 //Draw the player two paddle
 	wire [9:0] P2_paddle_width = 10;
 	wire [9:0] P2_paddle_height = 120;
 	wire [9:0] P2_paddle_x_location = 610;
-	wire [9:0] P2_paddle_y_location = 180;
+	wire [9:0] P2_paddle_y_location = 120;
 	reg P2_paddle;
 
 make_box draw_P2_paddle(
@@ -59,7 +98,8 @@ make_box draw_P2_paddle(
 	.box_y_location(P2_paddle_y_location),
 	.pixel_clk(pixel_clk),
 	.box(P2_paddle)
-);													
+);
+													
 													
 //Draw the top border
 	wire [9:0] top_border_width = 640;
@@ -151,8 +191,26 @@ make_box draw_ball (
 	.box(ball)
 );
 
-move_ball b1(pixel_clk, X_pix, Y_pix, P1_paddle_x_location, P1_paddle_y_location, P2_paddle_x_location, P2_paddle_y_location, new_ball_x_location, new_ball_y_location);	
-		
+move_ball b1(
+	pixel_clk, 
+	X_pix, 
+	Y_pix, 
+	P1_paddle_x_location, 
+	P1_paddle_y_location, 
+	P2_paddle_x_location, 
+	P2_paddle_y_location, 
+	new_ball_x_location, 
+	new_ball_y_location
+);	
+
+Paddle_input v1(
+	negedge_button_1,
+	negedge_button_2,
+	CLK_50,
+	reset_n,
+	P1_paddle_y_location,
+	new_paddle_location
+);
 always @(posedge pixel_clk)
 	begin
 		if (P1_paddle || P2_paddle || top_border || bottom_border || right_border || left_border || ball) pixel_color <= 12'b1111_1111_1111;
