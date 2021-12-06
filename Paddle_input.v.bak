@@ -1,0 +1,28 @@
+module Paddle_input(
+	input BUTTON0,
+	input BUTTON1,
+	input clk,
+	input reset,
+	input pixel_clk,
+	input [9:0] X_pix, Y_pix,
+	input [9:0] P1_paddle_width,
+	input [9:0] P1_paddle_height,
+	input [9:0] P1_paddle_x_location,
+	input [9:0] P1_paddle_y_location,
+	output [9:0] P1_paddle_y_newlocation
+);
+
+
+
+localparam VS = 480;
+localparam HS = 640;
+localparam height = 120;
+localparam width = 10;
+
+
+always @(*)begin
+	if(!BUTTON0 && (([9:0] P1_paddle_y + (height/2))<VS))[9:0] P1_paddle_y = [9:0] P1_paddle_y + 1;
+	else if(!BUTTON1 && (([9:0] P1_paddle_y - (height/2))>0))[9:0] P1_paddle_y = [9:0] P1_paddle_y - 1;
+	else [9:0] P1_paddle_y = [9:0] P1_paddle_y;
+end
+endmodule
