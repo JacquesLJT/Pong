@@ -3,7 +3,7 @@
 module Pong_top(CLK_50, VGA_BUS_R, VGA_BUS_G, VGA_BUS_B, VGA_HS, VGA_VS,ORG_BUTTON);
 
 
-input [2:0] ORG_BUTTON;
+input          [2:0]		  ORG_BUTTON;
 input	wire							CLK_50;
 
 output 	reg	[3:0]			VGA_BUS_R;		//Output Red
@@ -86,7 +86,7 @@ make_box draw_P1_paddle(
 	wire [9:0] P2_paddle_width = 10;
 	wire [9:0] P2_paddle_height = 120;
 	wire [9:0] P2_paddle_x_location = 610;
-	wire [9:0] P2_paddle_y_location = 120;
+	wire [9:0] P2_paddle_y_location = new_ball_y_location - 60;
 	reg P2_paddle;
 
 make_box draw_P2_paddle(
@@ -192,7 +192,8 @@ make_box draw_ball (
 );
 
 move_ball b1(
-	pixel_clk, 
+	CLK_50,
+	reset_n,
 	X_pix, 
 	Y_pix, 
 	P1_paddle_x_location, 

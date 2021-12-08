@@ -1,5 +1,5 @@
 module move_ball(
-	input pixel_clk,
+	input clk, reset,
 	input [9:0] X_pix, Y_pix,
 	input [9:0] P1_paddle_x_location,
 	input [9:0] P1_paddle_y_location,
@@ -19,57 +19,67 @@ module move_ball(
 	integer x_direction = 1, y_direction = 1;
 	
 	reg [9:0] x_ball, y_ball;
+	reg slow_clk = 0;
+	reg[27:0] i = 0;
 	
-	always @(posedge pixel_clk)
+	always @(posedge clk)
 	begin
-		
-		/*if(!reset)
+		if (i == 125000)
 		begin
-			x_ball <= H_ACTIVE/2;
-			y_ball <= V_ACTIVE/2;
-		end*/
-
-			//Bouncing off the edges
-			if (y_ball == (ball_height/2) + 1)
-				y_direction = y_direction*-1;
-			if (y_ball == (V_ACTIVE-(ball_height/2)-1))
-				y_direction = y_direction*-1;
-				
-			//Collision with the paddles
-			if (x_ball < (P1_paddle_x_location + ball_width/2) && y_ball > (P1_paddle_y_location - paddle_height/2) && y_ball < (P1_paddle_y_location + paddle_height/2))
-				x_direction = x_direction * -1;
-			if (x_ball > (P2_paddle_x_location - ball_width/2) && y_ball > (P2_paddle_y_location - paddle_height/2) && y_ball < (P2_paddle_y_location + paddle_height/2))
-				x_direction = x_direction * -1;
-				
-			if (x_ball == (H_ACTIVE - ball_width/2))
-			begin
-				x_ball <= H_ACTIVE/2;
-				y_ball <= V_ACTIVE/2;
-				y_direction = y_direction * -1;
-				x_direction = x_direction * -1;
-			end
+			i <= 0;
+			slow_clk = ~slow_clk;
+		end
+		else i <= i+1;
+	end
+	
+	
+	always @(posedge slow_clk)
+	begin
+			if(!reset)
+				begin
+					x_ball <= H_ACTIVE/2;
+					y_ball <= V_ACTIVE/2;
+				end
 			
-			else if (x_ball == 0)
+			else if(reset)
 			begin
-				x_ball <= H_ACTIVE/2;
-				y_ball <= V_ACTIVE/2;
-				y_direction = y_direction * -1;
-				x_direction = x_direction * -1;
-			end
-			
-			else
-			begin
+				//Bouncing off the edges
+				if (y_ball == (ball_height/2) + 1)
+					y_direction = y_direction*-1;
+				if (y_ball == (V_ACTIVE-(ball_height/2)-1))
+					y_direction = y_direction*-1;
+				
+				//Collision with the paddles
+				if (x_ball < (P1_paddle_x_location + ball_width/2) && (y_ball > (P1_paddle_y_location - paddle_height)) && (y_ball < (P1_paddle_y_location + paddle_height)))
+					x_direction = x_direction * -1;
+				if (x_ball > (P2_paddle_x_location - ball_width/2) && (y_ball > (P2_paddle_y_location - paddle_height)) && (y_ball < (P2_paddle_y_location + paddle_height)))
+					x_direction = x_direction * -1;
+				
+				if (x_ball == (H_ACTIVE - ball_width/2))
+				begin
+					x_ball <= H_ACTIVE/2;
+					y_ball <= V_ACTIVE/2;
+					y_direction = y_direction * -1;
+					x_direction = x_direction * -1;
+				end
+				else if (x_ball == 0)
+				begin
+					x_ball <= H_ACTIVE/2;
+					y_ball <= V_ACTIVE/2;
+					y_direction = y_direction * -1;
+					x_direction = x_direction * -1;
+				end
+				else
+				begin
 					x_ball <= x_ball + x_direction;
-					y_ball <= y_ball + y_direction;
+					y_ball <= y_ball - y_direction;
+				end
 			end
-			
-		/*end
-		
-		else
+			else
 			begin
 				x_ball <= x_ball;
 				y_ball <= y_ball;
-			end*/
+			end
 	end
 	
 	assign new_ball_x_location = x_ball;

@@ -15,17 +15,17 @@ always @(posedge clk or negedge reset)
 	begin
 		if(!reset)
 			begin
-				P1_paddle_y <= VS/2;
+				P1_paddle_y <= 180;
 			end
 		else
 			begin
 				if(BUTTON0 && ((P1_paddle_y + (height))<VS))
 					begin
-						P1_paddle_y <= P1_paddle_y + 10;
+						P1_paddle_y <= P1_paddle_y + 20;
 					end
 				else if(BUTTON1 && P1_paddle_y >0)
 					begin
-						P1_paddle_y <= P1_paddle_y - 10;
+						P1_paddle_y <= P1_paddle_y - 20;
 					end
 				else begin P1_paddle_y <= P1_paddle_y;
 				end
