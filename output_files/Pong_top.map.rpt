@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pong_top
-Tue Dec 07 23:47:51 2021
+Thu Dec 09 14:39:32 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -18,26 +18,24 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  10. General Register Statistics
  11. Inverted Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_gen[0].button_debouncer_inst
- 14. Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_gen[1].button_debouncer_inst
- 15. Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_gen[2].button_debouncer_inst
- 16. Parameter Settings for User Entity Instance: DE0_VGA:VGA_Driver
- 17. Parameter Settings for User Entity Instance: DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component
- 18. altpll Parameter Settings by Entity Instance
- 19. Port Connectivity Checks: "DE0_VGA:VGA_Driver"
- 20. Port Connectivity Checks: "make_box:draw_ball"
- 21. Port Connectivity Checks: "make_box:draw_left_border"
- 22. Port Connectivity Checks: "make_box:draw_right_border"
- 23. Port Connectivity Checks: "make_box:draw_bottom_border"
- 24. Port Connectivity Checks: "make_box:draw_top_border"
- 25. Port Connectivity Checks: "make_box:draw_P2_paddle"
- 26. Port Connectivity Checks: "make_box:draw_P1_paddle"
- 27. Port Connectivity Checks: "button_debouncer:button_debouncer_gen[2].button_debouncer_inst"
- 28. Port Connectivity Checks: "button_debouncer:button_debouncer_gen[1].button_debouncer_inst"
- 29. Port Connectivity Checks: "button_debouncer:button_debouncer_gen[0].button_debouncer_inst"
- 30. Elapsed Time Per Partition
- 31. Analysis & Synthesis Messages
- 32. Analysis & Synthesis Suppressed Messages
+ 13. Parameter Settings for User Entity Instance: DE0_VGA:VGA_Driver
+ 14. Parameter Settings for User Entity Instance: DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component
+ 15. altpll Parameter Settings by Entity Instance
+ 16. Port Connectivity Checks: "DE0_VGA:VGA_Driver"
+ 17. Port Connectivity Checks: "make_box:draw_score_right"
+ 18. Port Connectivity Checks: "make_box:draw_score_left"
+ 19. Port Connectivity Checks: "make_box:draw_board_bottom"
+ 20. Port Connectivity Checks: "make_box:draw_center"
+ 21. Port Connectivity Checks: "make_box:draw_ball"
+ 22. Port Connectivity Checks: "make_box:draw_left_border"
+ 23. Port Connectivity Checks: "make_box:draw_right_border"
+ 24. Port Connectivity Checks: "make_box:draw_bottom_border"
+ 25. Port Connectivity Checks: "make_box:draw_top_border"
+ 26. Port Connectivity Checks: "make_box:draw_P2_paddle"
+ 27. Port Connectivity Checks: "make_box:draw_P1_paddle"
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
+ 30. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -63,15 +61,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec 07 23:47:51 2021           ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec 09 14:39:32 2021           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Pong_top                                        ;
 ; Top-level Entity Name              ; Pong_top                                        ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 469                                             ;
-;     Total combinational functions  ; 441                                             ;
-;     Dedicated logic registers      ; 143                                             ;
-; Total registers                    ; 143                                             ;
+; Total logic elements               ; 448                                             ;
+;     Total combinational functions  ; 438                                             ;
+;     Dedicated logic registers      ; 123                                             ;
+; Total registers                    ; 123                                             ;
 ; Total pins                         ; 18                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -187,7 +185,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; move_ball.v                      ; yes             ; User Verilog HDL File             ; C:/ECE275_Labs/Pong/move_ball.v                                     ;         ;
 ; Paddle_input.v                   ; yes             ; User Verilog HDL File             ; C:/ECE275_Labs/Pong/Paddle_input.v                                  ;         ;
 ; ./DE0_VGA.v                      ; yes             ; Auto-Found Verilog HDL File       ; C:/ECE275_Labs/Pong/DE0_VGA.v                                       ;         ;
-; button_debouncer.v               ; yes             ; Auto-Found Verilog HDL File       ; C:/ECE275_Labs/Pong/button_debouncer.v                              ;         ;
 ; pll_pixel_clk.v                  ; yes             ; Auto-Found Wizard-Generated File  ; C:/ECE275_Labs/Pong/pll_pixel_clk.v                                 ;         ;
 ; altpll.tdf                       ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf        ;         ;
 ; aglobal130.inc                   ; yes             ; Megafunction                      ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc    ;         ;
@@ -198,62 +195,63 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------------------------+---------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 469          ;
-;                                             ;              ;
-; Total combinational functions               ; 441          ;
-; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 121          ;
-;     -- 3 input functions                    ; 126          ;
-;     -- <=2 input functions                  ; 194          ;
-;                                             ;              ;
-; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 192          ;
-;     -- arithmetic mode                      ; 249          ;
-;                                             ;              ;
-; Total registers                             ; 143          ;
-;     -- Dedicated logic registers            ; 143          ;
-;     -- I/O registers                        ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 18           ;
-; Embedded Multiplier 9-bit elements          ; 0            ;
-; Total PLLs                                  ; 1            ;
-;     -- PLLs                                 ; 1            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; CLK_50~input ;
-; Maximum fan-out                             ; 76           ;
-; Total fan-out                               ; 1615         ;
-; Average fan-out                             ; 2.60         ;
-+---------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                                                           ;
++---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                                                   ;
++---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 448                                                                                                                     ;
+;                                             ;                                                                                                                         ;
+; Total combinational functions               ; 438                                                                                                                     ;
+; Logic element usage by number of LUT inputs ;                                                                                                                         ;
+;     -- 4 input functions                    ; 113                                                                                                                     ;
+;     -- 3 input functions                    ; 169                                                                                                                     ;
+;     -- <=2 input functions                  ; 156                                                                                                                     ;
+;                                             ;                                                                                                                         ;
+; Logic elements by mode                      ;                                                                                                                         ;
+;     -- normal mode                          ; 196                                                                                                                     ;
+;     -- arithmetic mode                      ; 242                                                                                                                     ;
+;                                             ;                                                                                                                         ;
+; Total registers                             ; 123                                                                                                                     ;
+;     -- Dedicated logic registers            ; 123                                                                                                                     ;
+;     -- I/O registers                        ; 0                                                                                                                       ;
+;                                             ;                                                                                                                         ;
+; I/O pins                                    ; 18                                                                                                                      ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                                                       ;
+; Total PLLs                                  ; 1                                                                                                                       ;
+;     -- PLLs                                 ; 1                                                                                                                       ;
+;                                             ;                                                                                                                         ;
+; Maximum fan-out node                        ; DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component|PLL_PIXEL_CLK_altpll:auto_generated|wire_pll1_clk[0] ;
+; Maximum fan-out                             ; 52                                                                                                                      ;
+; Total fan-out                               ; 1596                                                                                                                    ;
+; Average fan-out                             ; 2.67                                                                                                                    ;
++---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                               ;
-+---------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                                          ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                              ; Library Name ;
-+---------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
-; |Pong_top                                                           ; 441 (11)          ; 143 (3)      ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |Pong_top                                                                                                        ; work         ;
-;    |DE0_VGA:VGA_Driver|                                             ; 83 (83)           ; 38 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|DE0_VGA:VGA_Driver                                                                                     ; work         ;
-;       |PLL_PIXEL_CLK:pll_inst0|                                     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0                                                             ; work         ;
-;          |altpll:altpll_component|                                  ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component                                     ; work         ;
-;             |PLL_PIXEL_CLK_altpll:auto_generated|                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component|PLL_PIXEL_CLK_altpll:auto_generated ; work         ;
-;    |Paddle_input:v1|                                                ; 23 (23)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|Paddle_input:v1                                                                                        ; work         ;
-;    |button_debouncer:button_debouncer_gen[0].button_debouncer_inst| ; 36 (36)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|button_debouncer:button_debouncer_gen[0].button_debouncer_inst                                         ; work         ;
-;    |button_debouncer:button_debouncer_gen[1].button_debouncer_inst| ; 7 (7)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|button_debouncer:button_debouncer_gen[1].button_debouncer_inst                                         ; work         ;
-;    |button_debouncer:button_debouncer_gen[2].button_debouncer_inst| ; 0 (0)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|button_debouncer:button_debouncer_gen[2].button_debouncer_inst                                         ; work         ;
-;    |make_box:draw_P1_paddle|                                        ; 29 (29)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_P1_paddle                                                                                ; work         ;
-;    |make_box:draw_P2_paddle|                                        ; 31 (31)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_P2_paddle                                                                                ; work         ;
-;    |make_box:draw_ball|                                             ; 59 (59)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_ball                                                                                     ; work         ;
-;    |make_box:draw_bottom_border|                                    ; 6 (6)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_bottom_border                                                                            ; work         ;
-;    |make_box:draw_left_border|                                      ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_left_border                                                                              ; work         ;
-;    |make_box:draw_right_border|                                     ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_right_border                                                                             ; work         ;
-;    |make_box:draw_top_border|                                       ; 5 (5)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_top_border                                                                               ; work         ;
-;    |move_ball:b1|                                                   ; 146 (146)         ; 51 (51)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|move_ball:b1                                                                                           ; work         ;
-+---------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                             ;
++---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                              ; Library Name ;
++---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
+; |Pong_top                                         ; 438 (6)           ; 123 (2)      ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |Pong_top                                                                                                        ; work         ;
+;    |DE0_VGA:VGA_Driver|                           ; 80 (80)           ; 38 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|DE0_VGA:VGA_Driver                                                                                     ; work         ;
+;       |PLL_PIXEL_CLK:pll_inst0|                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0                                                             ; work         ;
+;          |altpll:altpll_component|                ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component                                     ; work         ;
+;             |PLL_PIXEL_CLK_altpll:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component|PLL_PIXEL_CLK_altpll:auto_generated ; work         ;
+;    |Paddle_input:v1|                              ; 70 (70)           ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|Paddle_input:v1                                                                                        ; work         ;
+;    |make_box:draw_P1_paddle|                      ; 32 (32)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_P1_paddle                                                                                ; work         ;
+;    |make_box:draw_P2_paddle|                      ; 32 (32)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_P2_paddle                                                                                ; work         ;
+;    |make_box:draw_ball|                           ; 59 (59)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_ball                                                                                     ; work         ;
+;    |make_box:draw_board_bottom|                   ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_board_bottom                                                                             ; work         ;
+;    |make_box:draw_bottom_border|                  ; 7 (7)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_bottom_border                                                                            ; work         ;
+;    |make_box:draw_center|                         ; 5 (5)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_center                                                                                   ; work         ;
+;    |make_box:draw_left_border|                    ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_left_border                                                                              ; work         ;
+;    |make_box:draw_right_border|                   ; 4 (4)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_right_border                                                                             ; work         ;
+;    |make_box:draw_score_left|                     ; 6 (6)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_score_left                                                                               ; work         ;
+;    |make_box:draw_score_right|                    ; 6 (6)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_score_right                                                                              ; work         ;
+;    |make_box:draw_top_border|                     ; 7 (7)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|make_box:draw_top_border                                                                               ; work         ;
+;    |move_ball:b1|                                 ; 114 (114)         ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pong_top|move_ball:b1                                                                                           ; work         ;
++---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -266,62 +264,49 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+------------------------------------------------------+-------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                  ;
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-; Register name                                                              ; Reason for Removal                                                                     ;
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-; pixel_color[0..10]                                                         ; Merged with pixel_color[11]                                                            ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[20] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[20] ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[20] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[20] ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[19] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[19] ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[19] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[19] ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[18] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[18] ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[18] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[18] ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[17] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[17] ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[17] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[17] ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[16] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[16] ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[16] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[16] ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[15] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[15] ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[15] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[15] ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[14] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[14] ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[14] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[14] ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[13] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[13] ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[13] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[13] ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[12] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[12] ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[12] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[12] ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[11] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[11] ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[11] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[11] ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[10] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[10] ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[10] ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[10] ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[9]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[9]  ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[9]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[9]  ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[8]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[8]  ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[8]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[8]  ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[7]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[7]  ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[7]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[7]  ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[6]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[6]  ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[6]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[6]  ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[5]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[5]  ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[5]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[5]  ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[4]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[4]  ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[4]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[4]  ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[3]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[3]  ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[3]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[3]  ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[2]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[2]  ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[2]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[2]  ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[1]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[1]  ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[1]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[1]  ;
-; button_debouncer:button_debouncer_gen[1].button_debouncer_inst|counter[0]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[0]  ;
-; button_debouncer:button_debouncer_gen[2].button_debouncer_inst|counter[0]  ; Merged with button_debouncer:button_debouncer_gen[0].button_debouncer_inst|counter[0]  ;
-; move_ball:b1|x_direction[0]                                                ; Stuck at VCC due to stuck port data_in                                                 ;
-; move_ball:b1|y_direction[0]                                                ; Stuck at VCC due to stuck port data_in                                                 ;
-; move_ball:b1|x_direction[10..31]                                           ; Lost fanout                                                                            ;
-; move_ball:b1|y_direction[10..31]                                           ; Lost fanout                                                                            ;
-; move_ball:b1|y_direction[2..9]                                             ; Merged with move_ball:b1|y_direction[1]                                                ;
-; move_ball:b1|x_direction[2..9]                                             ; Merged with move_ball:b1|x_direction[1]                                                ;
-; Total Number of Removed Registers = 115                                    ;                                                                                        ;
-+----------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++-----------------------------------------+-----------------------------------------+
+; Register name                           ; Reason for Removal                      ;
++-----------------------------------------+-----------------------------------------+
+; pixel_color[8,10,11]                    ; Merged with pixel_color[9]              ;
+; pixel_color[0..6]                       ; Merged with pixel_color[7]              ;
+; move_ball:b1|i[0]                       ; Merged with Paddle_input:v1|i[0]        ;
+; move_ball:b1|i[1]                       ; Merged with Paddle_input:v1|i[1]        ;
+; move_ball:b1|i[2]                       ; Merged with Paddle_input:v1|i[2]        ;
+; move_ball:b1|i[3]                       ; Merged with Paddle_input:v1|i[3]        ;
+; move_ball:b1|i[4]                       ; Merged with Paddle_input:v1|i[4]        ;
+; move_ball:b1|i[5]                       ; Merged with Paddle_input:v1|i[5]        ;
+; move_ball:b1|i[6]                       ; Merged with Paddle_input:v1|i[6]        ;
+; move_ball:b1|i[7]                       ; Merged with Paddle_input:v1|i[7]        ;
+; move_ball:b1|i[8]                       ; Merged with Paddle_input:v1|i[8]        ;
+; move_ball:b1|i[9]                       ; Merged with Paddle_input:v1|i[9]        ;
+; move_ball:b1|i[10]                      ; Merged with Paddle_input:v1|i[10]       ;
+; move_ball:b1|i[11]                      ; Merged with Paddle_input:v1|i[11]       ;
+; move_ball:b1|i[12]                      ; Merged with Paddle_input:v1|i[12]       ;
+; move_ball:b1|i[13]                      ; Merged with Paddle_input:v1|i[13]       ;
+; move_ball:b1|i[14]                      ; Merged with Paddle_input:v1|i[14]       ;
+; move_ball:b1|i[15]                      ; Merged with Paddle_input:v1|i[15]       ;
+; move_ball:b1|i[16]                      ; Merged with Paddle_input:v1|i[16]       ;
+; move_ball:b1|i[17]                      ; Merged with Paddle_input:v1|i[17]       ;
+; move_ball:b1|i[18]                      ; Merged with Paddle_input:v1|i[18]       ;
+; move_ball:b1|i[19]                      ; Merged with Paddle_input:v1|i[19]       ;
+; move_ball:b1|i[20]                      ; Merged with Paddle_input:v1|i[20]       ;
+; move_ball:b1|i[21]                      ; Merged with Paddle_input:v1|i[21]       ;
+; move_ball:b1|i[22]                      ; Merged with Paddle_input:v1|i[22]       ;
+; move_ball:b1|i[23]                      ; Merged with Paddle_input:v1|i[23]       ;
+; move_ball:b1|i[24]                      ; Merged with Paddle_input:v1|i[24]       ;
+; move_ball:b1|i[25]                      ; Merged with Paddle_input:v1|i[25]       ;
+; move_ball:b1|i[26]                      ; Merged with Paddle_input:v1|i[26]       ;
+; move_ball:b1|i[27]                      ; Merged with Paddle_input:v1|i[27]       ;
+; move_ball:b1|x_direction[0]             ; Stuck at VCC due to stuck port data_in  ;
+; move_ball:b1|y_direction[0]             ; Stuck at VCC due to stuck port data_in  ;
+; move_ball:b1|x_direction[10..31]        ; Lost fanout                             ;
+; move_ball:b1|y_direction[10..31]        ; Lost fanout                             ;
+; move_ball:b1|x_direction[2..9]          ; Merged with move_ball:b1|x_direction[1] ;
+; move_ball:b1|y_direction[2..9]          ; Merged with move_ball:b1|y_direction[1] ;
+; Total Number of Removed Registers = 100 ;                                         ;
++-----------------------------------------+-----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -329,12 +314,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 143   ;
+; Total registers                              ; 123   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 20    ;
-; Number of registers using Asynchronous Clear ; 8     ;
+; Number of registers using Asynchronous Clear ; 10    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 24    ;
+; Number of registers using Clock Enable       ; 25    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -359,46 +344,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |Pong_top|Paddle_input:v1|P1_paddle_y[8] ;
-; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |Pong_top|move_ball:b1|x_direction[7]    ;
-; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |Pong_top|move_ball:b1|x_ball[1]         ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 0 LEs                ; 12 LEs                 ; Yes        ; |Pong_top|Paddle_input:v1|P1_paddle_y[6] ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |Pong_top|move_ball:b1|y_direction[1]    ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |Pong_top|move_ball:b1|P2_y[4]           ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |Pong_top|move_ball:b1|y_ball[6]         ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |Pong_top|Paddle_input:v1|P1_paddle_y[5] ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |Pong_top|move_ball:b1|y_direction       ;
 ; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |Pong_top|move_ball:b1|x_direction       ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |Pong_top|move_ball:b1|y_direction       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_gen[0].button_debouncer_inst ;
-+----------------+--------+-----------------------------------------------------------------------------------+
-; Parameter Name ; Value  ; Type                                                                              ;
-+----------------+--------+-----------------------------------------------------------------------------------+
-; preset_val     ; 0      ; Unsigned Binary                                                                   ;
-; counter_max    ; 100000 ; Signed Integer                                                                    ;
-+----------------+--------+-----------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_gen[1].button_debouncer_inst ;
-+----------------+--------+-----------------------------------------------------------------------------------+
-; Parameter Name ; Value  ; Type                                                                              ;
-+----------------+--------+-----------------------------------------------------------------------------------+
-; preset_val     ; 0      ; Unsigned Binary                                                                   ;
-; counter_max    ; 100000 ; Signed Integer                                                                    ;
-+----------------+--------+-----------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_gen[2].button_debouncer_inst ;
-+----------------+--------+-----------------------------------------------------------------------------------+
-; Parameter Name ; Value  ; Type                                                                              ;
-+----------------+--------+-----------------------------------------------------------------------------------+
-; preset_val     ; 0      ; Unsigned Binary                                                                   ;
-; counter_max    ; 100000 ; Signed Integer                                                                    ;
-+----------------+--------+-----------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------+
@@ -822,6 +775,104 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------+
 
 
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "make_box:draw_score_right"                                                                                                                                             ;
++----------------------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                 ; Type  ; Severity ; Details                                                                                                                                                 ;
++----------------------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; box_width[1..0]      ; Input ; Info     ; Stuck at VCC                                                                                                                                            ;
+; box_width[9..2]      ; Input ; Info     ; Stuck at GND                                                                                                                                            ;
+; box_height[5..4]     ; Input ; Info     ; Stuck at VCC                                                                                                                                            ;
+; box_height[9..6]     ; Input ; Info     ; Stuck at GND                                                                                                                                            ;
+; box_height[3..2]     ; Input ; Info     ; Stuck at GND                                                                                                                                            ;
+; box_height[1]        ; Input ; Info     ; Stuck at VCC                                                                                                                                            ;
+; box_height[0]        ; Input ; Info     ; Stuck at GND                                                                                                                                            ;
+; box_x_location[6..4] ; Input ; Info     ; Stuck at VCC                                                                                                                                            ;
+; box_x_location[3..2] ; Input ; Info     ; Stuck at GND                                                                                                                                            ;
+; box_x_location[9]    ; Input ; Info     ; Stuck at GND                                                                                                                                            ;
+; box_x_location[8]    ; Input ; Info     ; Stuck at VCC                                                                                                                                            ;
+; box_x_location[7]    ; Input ; Info     ; Stuck at GND                                                                                                                                            ;
+; box_x_location[1]    ; Input ; Info     ; Stuck at VCC                                                                                                                                            ;
+; box_x_location[0]    ; Input ; Info     ; Stuck at GND                                                                                                                                            ;
+; box_y_location       ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "box_y_location[9..1]" will be connected to GND. ;
++----------------------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "make_box:draw_score_left"   ;
++----------------------+-------+----------+--------------+
+; Port                 ; Type  ; Severity ; Details      ;
++----------------------+-------+----------+--------------+
+; box_width[1..0]      ; Input ; Info     ; Stuck at VCC ;
+; box_width[9..2]      ; Input ; Info     ; Stuck at GND ;
+; box_height[5..4]     ; Input ; Info     ; Stuck at VCC ;
+; box_height[9..6]     ; Input ; Info     ; Stuck at GND ;
+; box_height[3..2]     ; Input ; Info     ; Stuck at GND ;
+; box_height[1]        ; Input ; Info     ; Stuck at VCC ;
+; box_height[0]        ; Input ; Info     ; Stuck at GND ;
+; box_x_location[3..2] ; Input ; Info     ; Stuck at VCC ;
+; box_x_location[7..4] ; Input ; Info     ; Stuck at GND ;
+; box_x_location[1..0] ; Input ; Info     ; Stuck at GND ;
+; box_x_location[9]    ; Input ; Info     ; Stuck at GND ;
+; box_x_location[8]    ; Input ; Info     ; Stuck at VCC ;
+; box_y_location[9..2] ; Input ; Info     ; Stuck at GND ;
+; box_y_location[1]    ; Input ; Info     ; Stuck at VCC ;
+; box_y_location[0]    ; Input ; Info     ; Stuck at GND ;
++----------------------+-------+----------+--------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "make_box:draw_board_bottom" ;
++----------------------+-------+----------+--------------+
+; Port                 ; Type  ; Severity ; Details      ;
++----------------------+-------+----------+--------------+
+; box_width[6..5]      ; Input ; Info     ; Stuck at VCC ;
+; box_width[9..7]      ; Input ; Info     ; Stuck at GND ;
+; box_width[2..1]      ; Input ; Info     ; Stuck at GND ;
+; box_width[4]         ; Input ; Info     ; Stuck at GND ;
+; box_width[3]         ; Input ; Info     ; Stuck at VCC ;
+; box_width[0]         ; Input ; Info     ; Stuck at VCC ;
+; box_height[1..0]     ; Input ; Info     ; Stuck at VCC ;
+; box_height[9..2]     ; Input ; Info     ; Stuck at GND ;
+; box_x_location[3..2] ; Input ; Info     ; Stuck at VCC ;
+; box_x_location[7..4] ; Input ; Info     ; Stuck at GND ;
+; box_x_location[1..0] ; Input ; Info     ; Stuck at GND ;
+; box_x_location[9]    ; Input ; Info     ; Stuck at GND ;
+; box_x_location[8]    ; Input ; Info     ; Stuck at VCC ;
+; box_y_location[5..4] ; Input ; Info     ; Stuck at VCC ;
+; box_y_location[9..6] ; Input ; Info     ; Stuck at GND ;
+; box_y_location[3..2] ; Input ; Info     ; Stuck at GND ;
+; box_y_location[1]    ; Input ; Info     ; Stuck at VCC ;
+; box_y_location[0]    ; Input ; Info     ; Stuck at GND ;
++----------------------+-------+----------+--------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "make_box:draw_center"       ;
++----------------------+-------+----------+--------------+
+; Port                 ; Type  ; Severity ; Details      ;
++----------------------+-------+----------+--------------+
+; box_width[1..0]      ; Input ; Info     ; Stuck at VCC ;
+; box_width[9..2]      ; Input ; Info     ; Stuck at GND ;
+; box_height[8..7]     ; Input ; Info     ; Stuck at VCC ;
+; box_height[3..2]     ; Input ; Info     ; Stuck at VCC ;
+; box_height[1..0]     ; Input ; Info     ; Stuck at GND ;
+; box_height[9]        ; Input ; Info     ; Stuck at GND ;
+; box_height[6]        ; Input ; Info     ; Stuck at GND ;
+; box_height[5]        ; Input ; Info     ; Stuck at VCC ;
+; box_height[4]        ; Input ; Info     ; Stuck at GND ;
+; box_x_location[5..0] ; Input ; Info     ; Stuck at VCC ;
+; box_x_location[7..6] ; Input ; Info     ; Stuck at GND ;
+; box_x_location[9]    ; Input ; Info     ; Stuck at GND ;
+; box_x_location[8]    ; Input ; Info     ; Stuck at VCC ;
+; box_y_location[5..4] ; Input ; Info     ; Stuck at VCC ;
+; box_y_location[9..6] ; Input ; Info     ; Stuck at GND ;
+; box_y_location[1..0] ; Input ; Info     ; Stuck at GND ;
+; box_y_location[3]    ; Input ; Info     ; Stuck at GND ;
+; box_y_location[2]    ; Input ; Info     ; Stuck at VCC ;
++----------------------+-------+----------+--------------+
+
+
 +----------------------------------------------------+
 ; Port Connectivity Checks: "make_box:draw_ball"     ;
 +------------------+-------+----------+--------------+
@@ -954,33 +1005,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------------+-------+----------+--------------+
 
 
-+--------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "button_debouncer:button_debouncer_gen[2].button_debouncer_inst" ;
-+-------+-------+----------+-----------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                         ;
-+-------+-------+----------+-----------------------------------------------------------------+
-; rst_n ; Input ; Info     ; Stuck at VCC                                                    ;
-+-------+-------+----------+-----------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "button_debouncer:button_debouncer_gen[1].button_debouncer_inst" ;
-+-------+-------+----------+-----------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                         ;
-+-------+-------+----------+-----------------------------------------------------------------+
-; rst_n ; Input ; Info     ; Stuck at VCC                                                    ;
-+-------+-------+----------+-----------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "button_debouncer:button_debouncer_gen[0].button_debouncer_inst" ;
-+-------+-------+----------+-----------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                         ;
-+-------+-------+----------+-----------------------------------------------------------------+
-; rst_n ; Input ; Info     ; Stuck at VCC                                                    ;
-+-------+-------+----------+-----------------------------------------------------------------+
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -996,7 +1020,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Dec 07 23:47:49 2021
+    Info: Processing started: Thu Dec 09 14:39:30 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pong -c Pong_top
 Warning (125092): Tcl Script File PLL_PIXEL_CLK.qip not found
     Info (125063): set_global_assignment -name QIP_FILE PLL_PIXEL_CLK.qip
@@ -1009,31 +1033,19 @@ Info (12021): Found 1 design units, including 1 entities, in source file move_ba
     Info (12023): Found entity 1: move_ball
 Info (12021): Found 1 design units, including 1 entities, in source file paddle_input.v
     Info (12023): Found entity 1: Paddle_input
+Warning (10236): Verilog HDL Implicit Net warning at Pong_top.v(232): created implicit net for "score_right_y_location"
 Info (12127): Elaborating entity "Pong_top" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at Pong_top.v(89): truncated value with size 32 to match size of target (10)
-Warning (12125): Using design file button_debouncer.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: button_debouncer
-Info (12128): Elaborating entity "button_debouncer" for hierarchy "button_debouncer:button_debouncer_gen[0].button_debouncer_inst"
-Warning (10230): Verilog HDL assignment warning at button_debouncer.v(80): truncated value with size 32 to match size of target (21)
-Warning (10230): Verilog HDL assignment warning at button_debouncer.v(89): truncated value with size 32 to match size of target (21)
-Warning (10230): Verilog HDL assignment warning at button_debouncer.v(91): truncated value with size 32 to match size of target (21)
+Warning (10036): Verilog HDL or VHDL warning at Pong_top.v(223): object "score_right_location" assigned a value but never read
 Info (12128): Elaborating entity "make_box" for hierarchy "make_box:draw_P1_paddle"
 Info (12128): Elaborating entity "move_ball" for hierarchy "move_ball:b1"
-Warning (10230): Verilog HDL assignment warning at move_ball.v(32): truncated value with size 32 to match size of target (28)
-Warning (10230): Verilog HDL assignment warning at move_ball.v(40): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at move_ball.v(41): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at move_ball.v(60): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at move_ball.v(61): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at move_ball.v(67): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at move_ball.v(68): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at move_ball.v(74): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at move_ball.v(75): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at move_ball.v(34): truncated value with size 32 to match size of target (28)
+Warning (10230): Verilog HDL assignment warning at move_ball.v(77): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at move_ball.v(78): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at move_ball.v(97): truncated value with size 32 to match size of target (10)
 Info (12128): Elaborating entity "Paddle_input" for hierarchy "Paddle_input:v1"
-Warning (10230): Verilog HDL assignment warning at Paddle_input.v(24): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at Paddle_input.v(28): truncated value with size 32 to match size of target (10)
-Warning (10240): Verilog HDL Always Construct warning at Paddle_input.v(14): inferring latch(es) for variable "P1_paddle_y", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "P1_paddle_y[0]" at Paddle_input.v(14)
-Info (10041): Inferred latch for "P1_paddle_y[1]" at Paddle_input.v(14)
+Warning (10230): Verilog HDL assignment warning at Paddle_input.v(25): truncated value with size 32 to match size of target (28)
+Warning (10230): Verilog HDL assignment warning at Paddle_input.v(38): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at Paddle_input.v(42): truncated value with size 32 to match size of target (10)
 Info (12128): Elaborating entity "DE0_VGA" for hierarchy "DE0_VGA:VGA_Driver"
 Warning (10230): Verilog HDL assignment warning at DE0_VGA.v(53): truncated value with size 32 to match size of target (11)
 Warning (10230): Verilog HDL assignment warning at DE0_VGA.v(54): truncated value with size 32 to match size of target (11)
@@ -1100,20 +1112,20 @@ Info (12133): Instantiated megafunction "DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_in
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_pixel_clk_altpll.v
     Info (12023): Found entity 1: PLL_PIXEL_CLK_altpll
 Info (12128): Elaborating entity "PLL_PIXEL_CLK_altpll" for hierarchy "DE0_VGA:VGA_Driver|PLL_PIXEL_CLK:pll_inst0|altpll:altpll_component|PLL_PIXEL_CLK_altpll:auto_generated"
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 44 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/ECE275_Labs/Pong/output_files/Pong_top.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 489 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 469 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 470 logic cells
+    Info (21061): Implemented 450 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 23 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 15 warnings
     Info: Peak virtual memory: 4601 megabytes
-    Info: Processing ended: Tue Dec 07 23:47:51 2021
+    Info: Processing ended: Thu Dec 09 14:39:32 2021
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
