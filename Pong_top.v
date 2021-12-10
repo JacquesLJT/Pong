@@ -28,6 +28,8 @@ wire [9:0] new_ball_x_location;
 wire [9:0] new_ball_y_location;
 wire [9:0] P2_location;
 
+wire [9:0] slow_clock;
+new_clock m1 (CLK_50,slow_clock);
 wire reset_n; //Reset
 
 assign reset_n   = ORG_BUTTON[0]; 			 		 
@@ -192,7 +194,7 @@ make_box draw_score_right (
 );	
 
 move_ball b1(
-	CLK_50,
+	slow_clock,
 	reset_n,
 	X_pix, 
 	Y_pix, 
@@ -208,7 +210,7 @@ move_ball b1(
 Paddle_input v1(
 	ORG_BUTTON[1],
 	ORG_BUTTON[2],
-	CLK_50,
+	slow_clock,
 	reset_n,
 	P1_paddle_y_location,
 	new_paddle_location

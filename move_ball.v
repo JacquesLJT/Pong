@@ -7,9 +7,7 @@ module move_ball(
 	input [9:0] P2_paddle_y_location,
 	output [9:0] new_ball_x_location,
 	output [9:0] new_ball_y_location,
-	output [9:0] P2_location,
-	output [3:0] P1_score,
-	output [3:0] P2_score
+	output [9:0] P2_location
 );
 
 	localparam H_ACTIVE = 640;
@@ -22,21 +20,9 @@ module move_ball(
 	integer x_direction = 1, y_direction = 1;
 	
 	reg [9:0] x_ball, y_ball;
-	reg slow_clk = 0;
-	reg[27:0] i = 0;
 	reg [9:0] P2_y;
 	
 	always @(posedge clk)
-	begin
-		if (i == 125000)
-		begin
-			i <= 0;
-			slow_clk = ~slow_clk;
-		end
-		else i <= i+1;
-	end
-	
-	always @(posedge slow_clk)
 	begin
 			if(!reset)
 				begin

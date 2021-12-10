@@ -1,3 +1,2 @@
-Warning (10268): Verilog HDL information at move_ball.v(29): always construct contains both blocking and non-blocking assignments
-Warning (10268): Verilog HDL information at move_ball.v(39): always construct contains both blocking and non-blocking assignments
-Warning (10268): Verilog HDL information at Paddle_input.v(18): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at move_ball.v(25): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at new_clock.v(6): always construct contains both blocking and non-blocking assignments

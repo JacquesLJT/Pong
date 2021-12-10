@@ -5,9 +5,9 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -sv -work work +incdir+C:/ECE275_Labs/Pong {C:/ECE275_Labs/Pong/move_ball.v}
-vlog -sv -work work +incdir+C:/ECE275_Labs/Pong {C:/ECE275_Labs/Pong/Paddle_input.v}
-vlog -sv -work work +incdir+C:/ECE275_Labs/Pong {C:/ECE275_Labs/Pong/pll_pixel_clk.v}
-vlog -sv -work work +incdir+C:/ECE275_Labs/Pong/db {C:/ECE275_Labs/Pong/db/pll_pixel_clk_altpll.v}
-vlog -sv -work work +incdir+C:/ECE275_Labs/Pong {C:/ECE275_Labs/Pong/Pong_top.v}
+vlog -sv -work work +incdir+C:/Users/carte/OneDrive/Documents/ECE275/Pong_275/Pong {C:/Users/carte/OneDrive/Documents/ECE275/Pong_275/Pong/move_ball.v}
+vlog -sv -work work +incdir+C:/Users/carte/OneDrive/Documents/ECE275/Pong_275/Pong {C:/Users/carte/OneDrive/Documents/ECE275/Pong_275/Pong/Paddle_input.v}
+vlog -sv -work work +incdir+C:/Users/carte/OneDrive/Documents/ECE275/Pong_275/Pong {C:/Users/carte/OneDrive/Documents/ECE275/Pong_275/Pong/pll_pixel_clk.v}
+vlog -sv -work work +incdir+C:/Users/carte/OneDrive/Documents/ECE275/Pong_275/Pong/db {C:/Users/carte/OneDrive/Documents/ECE275/Pong_275/Pong/db/pll_pixel_clk_altpll.v}
+vlog -sv -work work +incdir+C:/Users/carte/OneDrive/Documents/ECE275/Pong_275/Pong {C:/Users/carte/OneDrive/Documents/ECE275/Pong_275/Pong/Pong_top.v}
 
