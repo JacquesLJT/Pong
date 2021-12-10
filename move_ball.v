@@ -7,7 +7,9 @@ module move_ball(
 	input [9:0] P2_paddle_y_location,
 	output [9:0] new_ball_x_location,
 	output [9:0] new_ball_y_location,
-	output [9:0] P2_location
+	output [9:0] P2_location,
+	output [3:0] P1_score,
+	output [3:0] P2_score
 );
 
 	localparam H_ACTIVE = 640;
@@ -33,7 +35,6 @@ module move_ball(
 		end
 		else i <= i+1;
 	end
-	
 	
 	always @(posedge slow_clk)
 	begin
@@ -102,4 +103,52 @@ module move_ball(
 	assign new_ball_x_location = x_ball;
 	assign new_ball_y_location = y_ball;
 
+endmodule
+
+`timescale 10ns / 1ps
+module testbench ();
+	
+	reg clk ;
+	reg reset;
+	reg [9:0] P1_paddle_x_location;
+	reg [9:0] P1_paddle_y_location;
+	reg [9:0] P2_paddle_x_location;
+	reg [9:0] P2_paddle_y_location;
+	wire [9:0] new_ball_x_location;
+	wire [9:0] new_ball_y_location;
+	wire [9:0] P2_location;
+	wire [3:0] P1_score;
+	wire [3:0] P2_score;
+	
+	move_ball testball(
+		clk,
+		reset,
+		P1_paddle_x_location, 
+		P1_paddle_y_location, 
+		P2_paddle_x_location, 
+		P2_paddle_y_location, 
+		new_ball_x_location, 
+		new_ball_y_location, 
+		P2_location,
+		P1_score,
+		P2_score
+	);
+	
+	initial
+	begin
+		
+		P1_paddle_x_location <= 20;
+		P1_paddle_y_location <= 220;
+		P2_paddle_x_location <= 618;
+		P2_paddle_y_location <= 220;
+		reset <= 1;
+		clk <= 0;
+		#20 reset <= 0;
+		#20 P1_paddle_y_location <= 160;
+		#20 P2_paddle_y_location <= 200;
+		
+	end
+	
+	always #5 clk = ~clk;
+		
 endmodule

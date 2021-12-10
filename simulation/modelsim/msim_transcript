@@ -1,0 +1,89 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Pong_top_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -sv -work work +incdir+C:/ECE275_Labs/Pong {C:/ECE275_Labs/Pong/move_ball.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module move_ball
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# vlog -sv -work work +incdir+C:/ECE275_Labs/Pong {C:/ECE275_Labs/Pong/Paddle_input.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Paddle_input
+# 
+# Top level modules:
+# 	Paddle_input
+# vlog -sv -work work +incdir+C:/ECE275_Labs/Pong {C:/ECE275_Labs/Pong/pll_pixel_clk.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module PLL_PIXEL_CLK
+# 
+# Top level modules:
+# 	PLL_PIXEL_CLK
+# vlog -sv -work work +incdir+C:/ECE275_Labs/Pong/db {C:/ECE275_Labs/Pong/db/pll_pixel_clk_altpll.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module PLL_PIXEL_CLK_altpll
+# 
+# Top level modules:
+# 	PLL_PIXEL_CLK_altpll
+# vlog -sv -work work +incdir+C:/ECE275_Labs/Pong {C:/ECE275_Labs/Pong/Pong_top.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module DE0_VGA
+# -- Compiling module Pong_top
+# -- Compiling module make_box
+# 
+# Top level modules:
+# 	Pong_top
+# 
+vsim work.testbench
+# vsim work.testbench 
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.move_ball
+# ** Warning: (vsim-3017) C:/ECE275_Labs/Pong/move_ball.v(135): [TFMPC] - Too few port connections. Expected 13, found 11.
+# 
+#         Region: /testbench/testball
+# ** Warning: (vsim-3015) C:/ECE275_Labs/Pong/move_ball.v(135): [PCDPC] - Port size (10 or 10) does not match connection size (4) for port 'new_ball_y_location'. The port definition is at: C:/ECE275_Labs/Pong/move_ball.v(9).
+# 
+#         Region: /testbench/testball
+# ** Warning: (vsim-3015) C:/ECE275_Labs/Pong/move_ball.v(135): [PCDPC] - Port size (10 or 10) does not match connection size (4) for port 'P2_location'. The port definition is at: C:/ECE275_Labs/Pong/move_ball.v(10).
+# 
+#         Region: /testbench/testball
+# ** Warning: (vsim-3722) C:/ECE275_Labs/Pong/move_ball.v(135): [TFMPC] - Missing connection for port 'P1_score'.
+# 
+# ** Warning: (vsim-3722) C:/ECE275_Labs/Pong/move_ball.v(135): [TFMPC] - Missing connection for port 'P2_score'.
+# 
+add wave -position insertpoint  \
+sim:/testbench/clk
+add wave -position insertpoint  \
+sim:/testbench/reset
+add wave -position insertpoint  \
+sim:/testbench/P1_paddle_x_location
+add wave -position insertpoint  \
+sim:/testbench/P1_paddle_y_location
+add wave -position insertpoint  \
+sim:/testbench/P1_score
+add wave -position insertpoint  \
+sim:/testbench/P2_location
+add wave -position insertpoint  \
+sim:/testbench/P2_paddle_x_location
+add wave -position insertpoint  \
+sim:/testbench/P2_paddle_y_location
+add wave -position insertpoint  \
+sim:/testbench/P2_score
+add wave -position insertpoint  \
+sim:/testbench/new_ball_x_location
+add wave -position insertpoint  \
+sim:/testbench/new_ball_y_location
+run -all
+# Break key hit 
+# Break in Module testbench at C:/ECE275_Labs/Pong/move_ball.v line 152

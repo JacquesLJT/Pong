@@ -7,7 +7,7 @@ input          [2:0]		  ORG_BUTTON;
 input	wire							CLK_50;
 
 output 	reg	[3:0]			VGA_BUS_R;		//Output Red
-output	reg	[3:0]			VGA_BUS_G;		//Output Green
+output	reg	[3:0]			VGA_BUS_G; 		//Output Green
 output	reg	[3:0]			VGA_BUS_B;		//Output Blue
 
 output	reg	[0:0]				VGA_HS;			//Horizontal Sync
@@ -164,9 +164,9 @@ make_box draw_ball (
 
 //Center line
 	wire [9:0] center_width = 3;
-	wire [9:0] center_height = 428;
+	wire [9:0] center_height = 476;
 	wire [9:0] center_x_location = 319;
-	wire [9:0] center_y_location = 52;
+	wire [9:0] center_y_location = 2;
 	reg center;
 	
 make_box draw_center (
@@ -179,49 +179,6 @@ make_box draw_center (
 	.pixel_clk(pixel_clk),
 	.box(center)
 );
-
-//score board bottom
-	wire [9:0] board_bottom_width = 105;
-	wire [9:0] board_bottom_height = 3;
-	wire [9:0] board_bottom_x_location = 268;
-	wire [9:0] board_bottom_y_location = 50;
-	reg board_bottom;
-
-make_box draw_board_bottom (
-	.X_pix(X_pix),
-	.Y_pix(Y_pix),
-	.box_width(board_bottom_width),
-	.box_height(board_bottom_height),
-	.box_x_location(board_bottom_x_location),
-	.box_y_location(board_bottom_y_location),
-	.pixel_clk(pixel_clk),
-	.box(board_bottom)
-);
-
-//score board left
-	wire [9:0] score_left_width = 3;
-	wire [9:0] score_left_height = 50;
-	wire [9:0] score_left_x_location = 268;
-	wire [9:0] score_left_y_location = 2;
-	reg score_left;
-	
-make_box draw_score_left (
-	.X_pix(X_pix),
-	.Y_pix(Y_pix),
-	.box_width(score_left_width),
-	.box_height(score_left_height),
-	.box_x_location(score_left_x_location),
-	.box_y_location(score_left_y_location),
-	.pixel_clk(pixel_clk),
-	.box(score_left)
-);	
-
-//score board right
-	wire [9:0] score_right_width = 3;
-	wire [9:0] score_right_height = 50;
-	wire [9:0] score_right_x_location = 370;
-	wire [9:0] score_right_location = 2;
-	reg score_right;
 	
 make_box draw_score_right (
 	.X_pix(X_pix),
@@ -260,7 +217,6 @@ always @(posedge pixel_clk)
 	begin
 		if (P1_paddle || P2_paddle || top_border || bottom_border || right_border || left_border || ball) pixel_color <= 12'b1111_1111_1111;
 		else if (center) pixel_color <= 12'b0000_1111_1111;
-		else if (board_bottom || score_left || score_right) pixel_color <= 12'b1111_0000_0000;
 		else pixel_color <= 12'b0000_0000_0000;
 	end
 	
